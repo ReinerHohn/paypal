@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <ns1:ExecuteCheckoutOperationsResponse>
+   <ns3:ExecuteCheckoutOperationsResponseDetails>
+    <ns3:SetDataResponse>
+     <ns3:Token></ns3:Token>
+     <ns3:ShippingAddresses>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:ShippingAddresses>
+     <ns3:ShippingAddresses>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:ShippingAddresses>
+     <ns3:SetDataError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:SetDataError>
+     <ns3:SetDataError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:SetDataError>
+    </ns3:SetDataResponse>
+    <ns3:AuthorizationResponse>
+     <ns3:Status>Success</ns3:Status>
+     <ns3:AuthorizationError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:AuthorizationError>
+     <ns3:AuthorizationError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:AuthorizationError>
+    </ns3:AuthorizationResponse>
+   </ns3:ExecuteCheckoutOperationsResponseDetails>
+  </ns1:ExecuteCheckoutOperationsResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

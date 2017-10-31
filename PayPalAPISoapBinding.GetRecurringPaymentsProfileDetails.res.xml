@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <ns1:GetRecurringPaymentsProfileDetailsResponse>
+   <ns3:GetRecurringPaymentsProfileDetailsResponseDetails>
+    <ns3:ProfileID></ns3:ProfileID>
+    <ns3:ProfileStatus>ActiveProfile</ns3:ProfileStatus>
+    <ns3:Description></ns3:Description>
+    <ns3:AutoBillOutstandingAmount>NoAutoBill</ns3:AutoBillOutstandingAmount>
+    <ns3:MaxFailedPayments>0</ns3:MaxFailedPayments>
+    <ns3:RecurringPaymentsProfileDetails>
+     <ns3:SubscriberName></ns3:SubscriberName>
+     <ns3:SubscriberShippingAddress>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:SubscriberShippingAddress>
+     <ns3:BillingStartDate>2017-10-31T23:05:27Z</ns3:BillingStartDate>
+     <ns3:ProfileReference></ns3:ProfileReference>
+    </ns3:RecurringPaymentsProfileDetails>
+    <ns3:CurrentRecurringPaymentsPeriod>
+     <ns3:BillingPeriod>NoBillingPeriodType</ns3:BillingPeriod>
+     <ns3:BillingFrequency>0</ns3:BillingFrequency>
+     <ns3:TotalBillingCycles>0</ns3:TotalBillingCycles>
+     <ns3:Amount currencyID="AFA"></ns3:Amount>
+     <ns3:ShippingAmount currencyID="AFA"></ns3:ShippingAmount>
+     <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
+    </ns3:CurrentRecurringPaymentsPeriod>
+    <ns3:RecurringPaymentsSummary>
+     <ns3:NextBillingDate>2017-10-31T23:05:27Z</ns3:NextBillingDate>
+     <ns3:NumberCyclesCompleted>0</ns3:NumberCyclesCompleted>
+     <ns3:NumberCyclesRemaining>0</ns3:NumberCyclesRemaining>
+     <ns3:OutstandingBalance currencyID="AFA"></ns3:OutstandingBalance>
+     <ns3:FailedPaymentCount>0</ns3:FailedPaymentCount>
+     <ns3:LastPaymentDate>2017-10-31T23:05:27Z</ns3:LastPaymentDate>
+     <ns3:LastPaymentAmount currencyID="AFA"></ns3:LastPaymentAmount>
+    </ns3:RecurringPaymentsSummary>
+    <ns3:CreditCard>
+     <ns3:CreditCardType>Visa</ns3:CreditCardType>
+     <ns3:CreditCardNumber></ns3:CreditCardNumber>
+     <ns3:ExpMonth>0</ns3:ExpMonth>
+     <ns3:ExpYear>0</ns3:ExpYear>
+     <ns3:CardOwner>
+      <ns3:Payer></ns3:Payer>
+      <ns3:PayerID></ns3:PayerID>
+      <ns3:PayerStatus>verified</ns3:PayerStatus>
+      <ns3:PayerName>
+       <ns3:Salutation></ns3:Salutation>
+       <ns3:FirstName></ns3:FirstName>
+       <ns3:MiddleName></ns3:MiddleName>
+       <ns3:LastName></ns3:LastName>
+       <ns3:Suffix></ns3:Suffix>
+      </ns3:PayerName>
+      <ns3:PayerCountry>AF</ns3:PayerCountry>
+      <ns3:PayerBusiness></ns3:PayerBusiness>
+      <ns3:Address>
+       <ns3:Name></ns3:Name>
+       <ns3:Street1></ns3:Street1>
+       <ns3:Street2></ns3:Street2>
+       <ns3:CityName></ns3:CityName>
+       <ns3:StateOrProvince></ns3:StateOrProvince>
+       <ns3:Country>AF</ns3:Country>
+       <ns3:CountryName></ns3:CountryName>
+       <ns3:Phone></ns3:Phone>
+       <ns3:PostalCode></ns3:PostalCode>
+       <ns3:AddressID></ns3:AddressID>
+       <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+       <ns3:ExternalAddressID></ns3:ExternalAddressID>
+       <ns3:InternationalName></ns3:InternationalName>
+       <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+       <ns3:InternationalStreet></ns3:InternationalStreet>
+       <ns3:AddressStatus>None</ns3:AddressStatus>
+       <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+      </ns3:Address>
+      <ns3:ContactPhone></ns3:ContactPhone>
+      <ns3:WalletItems>
+       <ns3:Type>MERCHANT_COUPON</ns3:Type>
+       <ns3:Id></ns3:Id>
+       <ns3:Description></ns3:Description>
+      </ns3:WalletItems>
+      <ns3:WalletItems>
+       <ns3:Type>MERCHANT_COUPON</ns3:Type>
+       <ns3:Id></ns3:Id>
+       <ns3:Description></ns3:Description>
+      </ns3:WalletItems>
+      <ns3:TaxIdDetails>
+       <ns3:TaxIdType></ns3:TaxIdType>
+       <ns3:TaxId></ns3:TaxId>
+      </ns3:TaxIdDetails>
+      <ns3:EnhancedPayerInfo>
+      </ns3:EnhancedPayerInfo>
+     </ns3:CardOwner>
+     <ns3:CVV2></ns3:CVV2>
+     <ns3:StartMonth>0</ns3:StartMonth>
+     <ns3:StartYear>0</ns3:StartYear>
+     <ns3:IssueNumber></ns3:IssueNumber>
+     <ns3:ThreeDSecureRequest>
+      <ns3:Eci3ds></ns3:Eci3ds>
+      <ns3:Cavv></ns3:Cavv>
+      <ns3:Xid></ns3:Xid>
+      <ns3:MpiVendor3ds></ns3:MpiVendor3ds>
+      <ns3:AuthStatus3ds></ns3:AuthStatus3ds>
+     </ns3:ThreeDSecureRequest>
+    </ns3:CreditCard>
+    <ns3:TrialRecurringPaymentsPeriod>
+     <ns3:BillingPeriod>NoBillingPeriodType</ns3:BillingPeriod>
+     <ns3:BillingFrequency>0</ns3:BillingFrequency>
+     <ns3:TotalBillingCycles>0</ns3:TotalBillingCycles>
+     <ns3:Amount currencyID="AFA"></ns3:Amount>
+     <ns3:ShippingAmount currencyID="AFA"></ns3:ShippingAmount>
+     <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
+    </ns3:TrialRecurringPaymentsPeriod>
+    <ns3:RegularRecurringPaymentsPeriod>
+     <ns3:BillingPeriod>NoBillingPeriodType</ns3:BillingPeriod>
+     <ns3:BillingFrequency>0</ns3:BillingFrequency>
+     <ns3:TotalBillingCycles>0</ns3:TotalBillingCycles>
+     <ns3:Amount currencyID="AFA"></ns3:Amount>
+     <ns3:ShippingAmount currencyID="AFA"></ns3:ShippingAmount>
+     <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
+    </ns3:RegularRecurringPaymentsPeriod>
+    <ns3:TrialAmountPaid currencyID="AFA"></ns3:TrialAmountPaid>
+    <ns3:RegularAmountPaid currencyID="AFA"></ns3:RegularAmountPaid>
+    <ns3:AggregateAmount currencyID="AFA"></ns3:AggregateAmount>
+    <ns3:AggregateOptionalAmount currencyID="AFA"></ns3:AggregateOptionalAmount>
+    <ns3:FinalPaymentDueDate>2017-10-31T23:05:27Z</ns3:FinalPaymentDueDate>
+    <ns3:SoftDescriptor></ns3:SoftDescriptor>
+    <ns3:SoftDescriptorCity></ns3:SoftDescriptorCity>
+   </ns3:GetRecurringPaymentsProfileDetailsResponseDetails>
+  </ns1:GetRecurringPaymentsProfileDetailsResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

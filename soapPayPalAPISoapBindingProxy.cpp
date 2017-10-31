@@ -13,44 +13,58 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 
 #include "soapPayPalAPISoapBindingProxy.h"
 
-PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy() : soap(SOAP_IO_DEFAULT)
-{	PayPalAPISoapBindingProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
+PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy()
+{	this->soap = soap_new();
+	this->soap_own = true;
+	PayPalAPISoapBindingProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 }
 
 PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(const PayPalAPISoapBindingProxy& rhs)
-{	soap_copy_context(this, &rhs);
+{	this->soap = rhs.soap;
+	this->soap_own = false;
 	this->soap_endpoint = rhs.soap_endpoint;
 }
 
-PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(const struct soap &_soap) : soap(_soap)
-{ }
+PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(struct soap *_soap)
+{	this->soap = _soap;
+	this->soap_own = false;
+	PayPalAPISoapBindingProxy_init(_soap->imode, _soap->omode);
+}
 
-PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(const char *endpoint) : soap(SOAP_IO_DEFAULT)
-{	PayPalAPISoapBindingProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
+PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(const char *endpoint)
+{	this->soap = soap_new();
+	this->soap_own = true;
+	PayPalAPISoapBindingProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 	soap_endpoint = endpoint;
 }
 
-PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(soap_mode iomode) : soap(iomode)
-{	PayPalAPISoapBindingProxy_init(iomode, iomode);
+PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(soap_mode iomode)
+{	this->soap = soap_new();
+	this->soap_own = true;
+	PayPalAPISoapBindingProxy_init(iomode, iomode);
 }
 
-PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(const char *endpoint, soap_mode iomode) : soap(iomode)
-{	PayPalAPISoapBindingProxy_init(iomode, iomode);
+PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(const char *endpoint, soap_mode iomode)
+{	this->soap = soap_new();
+	this->soap_own = true;
+	PayPalAPISoapBindingProxy_init(iomode, iomode);
 	soap_endpoint = endpoint;
 }
 
-PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(soap_mode imode, soap_mode omode) : soap(imode, omode)
-{	PayPalAPISoapBindingProxy_init(imode, omode);
+PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy(soap_mode imode, soap_mode omode)
+{	this->soap = soap_new();
+	this->soap_own = true;
+	PayPalAPISoapBindingProxy_init(imode, omode);
 }
 
 PayPalAPISoapBindingProxy::~PayPalAPISoapBindingProxy()
-{
-	this->destroy();
-	}
+{	if (this->soap_own)
+		soap_free(this->soap);
+}
 
 void PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy_init(soap_mode imode, soap_mode omode)
-{	soap_imode(this, imode);
-	soap_omode(this, omode);
+{	soap_imode(this->soap, imode);
+	soap_omode(this->soap, omode);
 	soap_endpoint = NULL;
 	static const struct Namespace namespaces[] = {
         {"SOAP-ENV", "http://schemas.xmlsoap.org/soap/envelope/", "http://www.w3.org/*/soap-envelope", NULL},
@@ -63,83 +77,90 @@ void PayPalAPISoapBindingProxy::PayPalAPISoapBindingProxy_init(soap_mode imode, 
         {"ns1", "urn:ebay:api:PayPalAPI", NULL, NULL},
         {NULL, NULL, NULL, NULL}
     };
-	soap_set_namespaces(this, namespaces);
+	soap_set_namespaces(this->soap, namespaces);
 }
 
 PayPalAPISoapBindingProxy *PayPalAPISoapBindingProxy::copy()
-{	PayPalAPISoapBindingProxy *dup = SOAP_NEW_COPY(PayPalAPISoapBindingProxy(*(struct soap*)this));
+{	PayPalAPISoapBindingProxy *dup = SOAP_NEW_COPY(PayPalAPISoapBindingProxy);
+	if (dup)
+		soap_copy_context(dup->soap, this->soap);
 	return dup;
 }
 
 PayPalAPISoapBindingProxy& PayPalAPISoapBindingProxy::operator=(const PayPalAPISoapBindingProxy& rhs)
-{	soap_copy_context(this, &rhs);
-	this->soap_endpoint = rhs.soap_endpoint;
+{	if (this->soap != rhs.soap)
+	{	if (this->soap_own)
+			soap_free(this->soap);
+		this->soap = rhs.soap;
+		this->soap_own = false;
+		this->soap_endpoint = rhs.soap_endpoint;
+	}
 	return *this;
 }
 
 void PayPalAPISoapBindingProxy::destroy()
-{	soap_destroy(this);
-	soap_end(this);
+{	soap_destroy(this->soap);
+	soap_end(this->soap);
 }
 
 void PayPalAPISoapBindingProxy::reset()
 {	this->destroy();
-	soap_done(this);
-	soap_initialize(this);
+	soap_done(this->soap);
+	soap_initialize(this->soap);
 	PayPalAPISoapBindingProxy_init(SOAP_IO_DEFAULT, SOAP_IO_DEFAULT);
 }
 
 void PayPalAPISoapBindingProxy::soap_noheader()
-{	this->header = NULL;
+{	this->soap->header = NULL;
 }
 
 void PayPalAPISoapBindingProxy::soap_header(ns3__CustomSecurityHeaderType *ns1__RequesterCredentials)
-{	::soap_header(this);
-	this->header->ns1__RequesterCredentials = ns1__RequesterCredentials;
+{	::soap_header(this->soap);
+	this->soap->header->ns1__RequesterCredentials = ns1__RequesterCredentials;
 }
 
 ::SOAP_ENV__Header *PayPalAPISoapBindingProxy::soap_header()
-{	return this->header;
+{	return this->soap->header;
 }
 
 ::SOAP_ENV__Fault *PayPalAPISoapBindingProxy::soap_fault()
-{	return this->fault;
+{	return this->soap->fault;
 }
 
 const char *PayPalAPISoapBindingProxy::soap_fault_string()
-{	return *soap_faultstring(this);
+{	return *soap_faultstring(this->soap);
 }
 
 const char *PayPalAPISoapBindingProxy::soap_fault_detail()
-{	return *soap_faultdetail(this);
+{	return *soap_faultdetail(this->soap);
 }
 
 int PayPalAPISoapBindingProxy::soap_close_socket()
-{	return soap_closesock(this);
+{	return soap_closesock(this->soap);
 }
 
 int PayPalAPISoapBindingProxy::soap_force_close_socket()
-{	return soap_force_closesock(this);
+{	return soap_force_closesock(this->soap);
 }
 
 void PayPalAPISoapBindingProxy::soap_print_fault(FILE *fd)
-{	::soap_print_fault(this, fd);
+{	::soap_print_fault(this->soap, fd);
 }
 
 #ifndef WITH_LEAN
 #ifndef WITH_COMPAT
 void PayPalAPISoapBindingProxy::soap_stream_fault(std::ostream& os)
-{	::soap_stream_fault(this, os);
+{	::soap_stream_fault(this->soap, os);
 }
 #endif
 
 char *PayPalAPISoapBindingProxy::soap_sprint_fault(char *buf, size_t len)
-{	return ::soap_sprint_fault(this, buf, len);
+{	return ::soap_sprint_fault(this->soap, buf, len);
 }
 #endif
 
 int PayPalAPISoapBindingProxy::RefundTransaction(const char *endpoint, const char *soap_action, _ns1__RefundTransactionReq *ns1__RefundTransactionReq, ns1__RefundTransactionResponseType &ns1__RefundTransactionResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__RefundTransaction soap_tmp___ns1__RefundTransaction;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -193,7 +214,7 @@ int PayPalAPISoapBindingProxy::RefundTransaction(const char *endpoint, const cha
 }
 
 int PayPalAPISoapBindingProxy::InitiateRecoup(const char *endpoint, const char *soap_action, _ns1__InitiateRecoupReq *ns1__InitiateRecoupReq, ns1__InitiateRecoupResponseType &ns1__InitiateRecoupResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__InitiateRecoup soap_tmp___ns1__InitiateRecoup;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -247,7 +268,7 @@ int PayPalAPISoapBindingProxy::InitiateRecoup(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::CompleteRecoup(const char *endpoint, const char *soap_action, _ns1__CompleteRecoupReq *ns1__CompleteRecoupReq, ns1__CompleteRecoupResponseType &ns1__CompleteRecoupResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__CompleteRecoup soap_tmp___ns1__CompleteRecoup;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -301,7 +322,7 @@ int PayPalAPISoapBindingProxy::CompleteRecoup(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::CancelRecoup(const char *endpoint, const char *soap_action, _ns1__CancelRecoupReq *ns1__CancelRecoupReq, ns1__CancelRecoupResponseType &ns1__CancelRecoupResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__CancelRecoup soap_tmp___ns1__CancelRecoup;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -355,7 +376,7 @@ int PayPalAPISoapBindingProxy::CancelRecoup(const char *endpoint, const char *so
 }
 
 int PayPalAPISoapBindingProxy::GetTransactionDetails(const char *endpoint, const char *soap_action, _ns1__GetTransactionDetailsReq *ns1__GetTransactionDetailsReq, ns1__GetTransactionDetailsResponseType &ns1__GetTransactionDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetTransactionDetails soap_tmp___ns1__GetTransactionDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -409,7 +430,7 @@ int PayPalAPISoapBindingProxy::GetTransactionDetails(const char *endpoint, const
 }
 
 int PayPalAPISoapBindingProxy::BMCreateButton(const char *endpoint, const char *soap_action, _ns1__BMCreateButtonReq *ns1__BMCreateButtonReq, ns1__BMCreateButtonResponseType &ns1__BMCreateButtonResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMCreateButton soap_tmp___ns1__BMCreateButton;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -463,7 +484,7 @@ int PayPalAPISoapBindingProxy::BMCreateButton(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::BMUpdateButton(const char *endpoint, const char *soap_action, _ns1__BMUpdateButtonReq *ns1__BMUpdateButtonReq, ns1__BMUpdateButtonResponseType &ns1__BMUpdateButtonResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMUpdateButton soap_tmp___ns1__BMUpdateButton;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -517,7 +538,7 @@ int PayPalAPISoapBindingProxy::BMUpdateButton(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::BMSetInventory(const char *endpoint, const char *soap_action, _ns1__BMSetInventoryReq *ns1__BMSetInventoryReq, ns1__BMSetInventoryResponseType &ns1__BMSetInventoryResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMSetInventory soap_tmp___ns1__BMSetInventory;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -571,7 +592,7 @@ int PayPalAPISoapBindingProxy::BMSetInventory(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::BMGetButtonDetails(const char *endpoint, const char *soap_action, _ns1__BMGetButtonDetailsReq *ns1__BMGetButtonDetailsReq, ns1__BMGetButtonDetailsResponseType &ns1__BMGetButtonDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMGetButtonDetails soap_tmp___ns1__BMGetButtonDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -625,7 +646,7 @@ int PayPalAPISoapBindingProxy::BMGetButtonDetails(const char *endpoint, const ch
 }
 
 int PayPalAPISoapBindingProxy::BMGetInventory(const char *endpoint, const char *soap_action, _ns1__BMGetInventoryReq *ns1__BMGetInventoryReq, ns1__BMGetInventoryResponseType &ns1__BMGetInventoryResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMGetInventory soap_tmp___ns1__BMGetInventory;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -679,7 +700,7 @@ int PayPalAPISoapBindingProxy::BMGetInventory(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::BMManageButtonStatus(const char *endpoint, const char *soap_action, _ns1__BMManageButtonStatusReq *ns1__BMManageButtonStatusReq, ns1__BMManageButtonStatusResponseType &ns1__BMManageButtonStatusResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMManageButtonStatus soap_tmp___ns1__BMManageButtonStatus;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -733,7 +754,7 @@ int PayPalAPISoapBindingProxy::BMManageButtonStatus(const char *endpoint, const 
 }
 
 int PayPalAPISoapBindingProxy::BMButtonSearch(const char *endpoint, const char *soap_action, _ns1__BMButtonSearchReq *ns1__BMButtonSearchReq, ns1__BMButtonSearchResponseType &ns1__BMButtonSearchResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BMButtonSearch soap_tmp___ns1__BMButtonSearch;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -787,7 +808,7 @@ int PayPalAPISoapBindingProxy::BMButtonSearch(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::BillUser(const char *endpoint, const char *soap_action, _ns1__BillUserReq *ns1__BillUserReq, ns1__BillUserResponseType &ns1__BillUserResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BillUser soap_tmp___ns1__BillUser;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -841,7 +862,7 @@ int PayPalAPISoapBindingProxy::BillUser(const char *endpoint, const char *soap_a
 }
 
 int PayPalAPISoapBindingProxy::TransactionSearch(const char *endpoint, const char *soap_action, _ns1__TransactionSearchReq *ns1__TransactionSearchReq, ns1__TransactionSearchResponseType &ns1__TransactionSearchResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__TransactionSearch soap_tmp___ns1__TransactionSearch;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -895,7 +916,7 @@ int PayPalAPISoapBindingProxy::TransactionSearch(const char *endpoint, const cha
 }
 
 int PayPalAPISoapBindingProxy::MassPay(const char *endpoint, const char *soap_action, _ns1__MassPayReq *ns1__MassPayReq, ns1__MassPayResponseType &ns1__MassPayResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__MassPay soap_tmp___ns1__MassPay;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -949,7 +970,7 @@ int PayPalAPISoapBindingProxy::MassPay(const char *endpoint, const char *soap_ac
 }
 
 int PayPalAPISoapBindingProxy::BillAgreementUpdate(const char *endpoint, const char *soap_action, _ns1__BillAgreementUpdateReq *ns1__BillAgreementUpdateReq, ns1__BAUpdateResponseType &ns1__BAUpdateResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BillAgreementUpdate soap_tmp___ns1__BillAgreementUpdate;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1003,7 +1024,7 @@ int PayPalAPISoapBindingProxy::BillAgreementUpdate(const char *endpoint, const c
 }
 
 int PayPalAPISoapBindingProxy::AddressVerify(const char *endpoint, const char *soap_action, _ns1__AddressVerifyReq *ns1__AddressVerifyReq, ns1__AddressVerifyResponseType &ns1__AddressVerifyResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__AddressVerify soap_tmp___ns1__AddressVerify;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1057,7 +1078,7 @@ int PayPalAPISoapBindingProxy::AddressVerify(const char *endpoint, const char *s
 }
 
 int PayPalAPISoapBindingProxy::EnterBoarding(const char *endpoint, const char *soap_action, _ns1__EnterBoardingReq *ns1__EnterBoardingReq, ns1__EnterBoardingResponseType &ns1__EnterBoardingResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__EnterBoarding soap_tmp___ns1__EnterBoarding;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1111,7 +1132,7 @@ int PayPalAPISoapBindingProxy::EnterBoarding(const char *endpoint, const char *s
 }
 
 int PayPalAPISoapBindingProxy::GetBoardingDetails(const char *endpoint, const char *soap_action, _ns1__GetBoardingDetailsReq *ns1__GetBoardingDetailsReq, ns1__GetBoardingDetailsResponseType &ns1__GetBoardingDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetBoardingDetails soap_tmp___ns1__GetBoardingDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1165,7 +1186,7 @@ int PayPalAPISoapBindingProxy::GetBoardingDetails(const char *endpoint, const ch
 }
 
 int PayPalAPISoapBindingProxy::CreateMobilePayment(const char *endpoint, const char *soap_action, _ns1__CreateMobilePaymentReq *ns1__CreateMobilePaymentReq, ns1__CreateMobilePaymentResponseType &ns1__CreateMobilePaymentResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__CreateMobilePayment soap_tmp___ns1__CreateMobilePayment;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1219,7 +1240,7 @@ int PayPalAPISoapBindingProxy::CreateMobilePayment(const char *endpoint, const c
 }
 
 int PayPalAPISoapBindingProxy::GetMobileStatus(const char *endpoint, const char *soap_action, _ns1__GetMobileStatusReq *ns1__GetMobileStatusReq, ns1__GetMobileStatusResponseType &ns1__GetMobileStatusResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetMobileStatus soap_tmp___ns1__GetMobileStatus;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1273,7 +1294,7 @@ int PayPalAPISoapBindingProxy::GetMobileStatus(const char *endpoint, const char 
 }
 
 int PayPalAPISoapBindingProxy::SetMobileCheckout(const char *endpoint, const char *soap_action, _ns1__SetMobileCheckoutReq *ns1__SetMobileCheckoutReq, ns1__SetMobileCheckoutResponseType &ns1__SetMobileCheckoutResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__SetMobileCheckout soap_tmp___ns1__SetMobileCheckout;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1327,7 +1348,7 @@ int PayPalAPISoapBindingProxy::SetMobileCheckout(const char *endpoint, const cha
 }
 
 int PayPalAPISoapBindingProxy::DoMobileCheckoutPayment(const char *endpoint, const char *soap_action, _ns1__DoMobileCheckoutPaymentReq *ns1__DoMobileCheckoutPaymentReq, ns1__DoMobileCheckoutPaymentResponseType &ns1__DoMobileCheckoutPaymentResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoMobileCheckoutPayment soap_tmp___ns1__DoMobileCheckoutPayment;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1381,7 +1402,7 @@ int PayPalAPISoapBindingProxy::DoMobileCheckoutPayment(const char *endpoint, con
 }
 
 int PayPalAPISoapBindingProxy::GetBalance(const char *endpoint, const char *soap_action, _ns1__GetBalanceReq *ns1__GetBalanceReq, ns1__GetBalanceResponseType &ns1__GetBalanceResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetBalance soap_tmp___ns1__GetBalance;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1435,7 +1456,7 @@ int PayPalAPISoapBindingProxy::GetBalance(const char *endpoint, const char *soap
 }
 
 int PayPalAPISoapBindingProxy::GetPalDetails(const char *endpoint, const char *soap_action, _ns1__GetPalDetailsReq *ns1__GetPalDetailsReq, ns1__GetPalDetailsResponseType &ns1__GetPalDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetPalDetails soap_tmp___ns1__GetPalDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1489,7 +1510,7 @@ int PayPalAPISoapBindingProxy::GetPalDetails(const char *endpoint, const char *s
 }
 
 int PayPalAPISoapBindingProxy::DoExpressCheckoutPayment(const char *endpoint, const char *soap_action, _ns1__DoExpressCheckoutPaymentReq *ns1__DoExpressCheckoutPaymentReq, ns1__DoExpressCheckoutPaymentResponseType &ns1__DoExpressCheckoutPaymentResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoExpressCheckoutPayment soap_tmp___ns1__DoExpressCheckoutPayment;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1543,7 +1564,7 @@ int PayPalAPISoapBindingProxy::DoExpressCheckoutPayment(const char *endpoint, co
 }
 
 int PayPalAPISoapBindingProxy::DoUATPExpressCheckoutPayment(const char *endpoint, const char *soap_action, _ns1__DoUATPExpressCheckoutPaymentReq *ns1__DoUATPExpressCheckoutPaymentReq, ns1__DoUATPExpressCheckoutPaymentResponseType &ns1__DoUATPExpressCheckoutPaymentResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoUATPExpressCheckoutPayment soap_tmp___ns1__DoUATPExpressCheckoutPayment;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1597,7 +1618,7 @@ int PayPalAPISoapBindingProxy::DoUATPExpressCheckoutPayment(const char *endpoint
 }
 
 int PayPalAPISoapBindingProxy::SetAuthFlowParam(const char *endpoint, const char *soap_action, _ns1__SetAuthFlowParamReq *ns1__SetAuthFlowParamReq, ns1__SetAuthFlowParamResponseType &ns1__SetAuthFlowParamResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__SetAuthFlowParam soap_tmp___ns1__SetAuthFlowParam;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1651,7 +1672,7 @@ int PayPalAPISoapBindingProxy::SetAuthFlowParam(const char *endpoint, const char
 }
 
 int PayPalAPISoapBindingProxy::GetAuthDetails(const char *endpoint, const char *soap_action, _ns1__GetAuthDetailsReq *ns1__GetAuthDetailsReq, ns1__GetAuthDetailsResponseType &ns1__GetAuthDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetAuthDetails soap_tmp___ns1__GetAuthDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1705,7 +1726,7 @@ int PayPalAPISoapBindingProxy::GetAuthDetails(const char *endpoint, const char *
 }
 
 int PayPalAPISoapBindingProxy::SetAccessPermissions(const char *endpoint, const char *soap_action, _ns1__SetAccessPermissionsReq *ns1__SetAccessPermissionsReq, ns1__SetAccessPermissionsResponseType &ns1__SetAccessPermissionsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__SetAccessPermissions soap_tmp___ns1__SetAccessPermissions;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1759,7 +1780,7 @@ int PayPalAPISoapBindingProxy::SetAccessPermissions(const char *endpoint, const 
 }
 
 int PayPalAPISoapBindingProxy::UpdateAccessPermissions(const char *endpoint, const char *soap_action, _ns1__UpdateAccessPermissionsReq *ns1__UpdateAccessPermissionsReq, ns1__UpdateAccessPermissionsResponseType &ns1__UpdateAccessPermissionsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__UpdateAccessPermissions soap_tmp___ns1__UpdateAccessPermissions;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1813,7 +1834,7 @@ int PayPalAPISoapBindingProxy::UpdateAccessPermissions(const char *endpoint, con
 }
 
 int PayPalAPISoapBindingProxy::GetAccessPermissionDetails(const char *endpoint, const char *soap_action, _ns1__GetAccessPermissionDetailsReq *ns1__GetAccessPermissionDetailsReq, ns1__GetAccessPermissionDetailsResponseType &ns1__GetAccessPermissionDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetAccessPermissionDetails soap_tmp___ns1__GetAccessPermissionDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1867,7 +1888,7 @@ int PayPalAPISoapBindingProxy::GetAccessPermissionDetails(const char *endpoint, 
 }
 
 int PayPalAPISoapBindingProxy::GetIncentiveEvaluation(const char *endpoint, const char *soap_action, _ns1__GetIncentiveEvaluationReq *ns1__GetIncentiveEvaluationReq, ns1__GetIncentiveEvaluationResponseType &ns1__GetIncentiveEvaluationResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetIncentiveEvaluation soap_tmp___ns1__GetIncentiveEvaluation;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1921,7 +1942,7 @@ int PayPalAPISoapBindingProxy::GetIncentiveEvaluation(const char *endpoint, cons
 }
 
 int PayPalAPISoapBindingProxy::SetExpressCheckout(const char *endpoint, const char *soap_action, _ns1__SetExpressCheckoutReq *ns1__SetExpressCheckoutReq, ns1__SetExpressCheckoutResponseType &ns1__SetExpressCheckoutResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__SetExpressCheckout soap_tmp___ns1__SetExpressCheckout;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -1975,7 +1996,7 @@ int PayPalAPISoapBindingProxy::SetExpressCheckout(const char *endpoint, const ch
 }
 
 int PayPalAPISoapBindingProxy::ExecuteCheckoutOperations(const char *endpoint, const char *soap_action, _ns1__ExecuteCheckoutOperationsReq *ns1__ExecuteCheckoutOperationsReq, ns1__ExecuteCheckoutOperationsResponseType &ns1__ExecuteCheckoutOperationsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__ExecuteCheckoutOperations soap_tmp___ns1__ExecuteCheckoutOperations;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2029,7 +2050,7 @@ int PayPalAPISoapBindingProxy::ExecuteCheckoutOperations(const char *endpoint, c
 }
 
 int PayPalAPISoapBindingProxy::GetExpressCheckoutDetails(const char *endpoint, const char *soap_action, _ns1__GetExpressCheckoutDetailsReq *ns1__GetExpressCheckoutDetailsReq, ns1__GetExpressCheckoutDetailsResponseType &ns1__GetExpressCheckoutDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetExpressCheckoutDetails soap_tmp___ns1__GetExpressCheckoutDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2083,7 +2104,7 @@ int PayPalAPISoapBindingProxy::GetExpressCheckoutDetails(const char *endpoint, c
 }
 
 int PayPalAPISoapBindingProxy::DoDirectPayment(const char *endpoint, const char *soap_action, _ns1__DoDirectPaymentReq *ns1__DoDirectPaymentReq, ns1__DoDirectPaymentResponseType &ns1__DoDirectPaymentResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoDirectPayment soap_tmp___ns1__DoDirectPayment;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2137,7 +2158,7 @@ int PayPalAPISoapBindingProxy::DoDirectPayment(const char *endpoint, const char 
 }
 
 int PayPalAPISoapBindingProxy::ManagePendingTransactionStatus(const char *endpoint, const char *soap_action, _ns1__ManagePendingTransactionStatusReq *ns1__ManagePendingTransactionStatusReq, ns1__ManagePendingTransactionStatusResponseType &ns1__ManagePendingTransactionStatusResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__ManagePendingTransactionStatus soap_tmp___ns1__ManagePendingTransactionStatus;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2191,7 +2212,7 @@ int PayPalAPISoapBindingProxy::ManagePendingTransactionStatus(const char *endpoi
 }
 
 int PayPalAPISoapBindingProxy::DoCancel(const char *endpoint, const char *soap_action, _ns1__DoCancelReq *ns1__DoCancelReq, ns1__DoCancelResponseType &ns1__DoCancelResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoCancel soap_tmp___ns1__DoCancel;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2245,7 +2266,7 @@ int PayPalAPISoapBindingProxy::DoCancel(const char *endpoint, const char *soap_a
 }
 
 int PayPalAPISoapBindingProxy::DoCapture(const char *endpoint, const char *soap_action, _ns1__DoCaptureReq *ns1__DoCaptureReq, ns1__DoCaptureResponseType &ns1__DoCaptureResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoCapture soap_tmp___ns1__DoCapture;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2299,7 +2320,7 @@ int PayPalAPISoapBindingProxy::DoCapture(const char *endpoint, const char *soap_
 }
 
 int PayPalAPISoapBindingProxy::DoReauthorization(const char *endpoint, const char *soap_action, _ns1__DoReauthorizationReq *ns1__DoReauthorizationReq, ns1__DoReauthorizationResponseType &ns1__DoReauthorizationResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoReauthorization soap_tmp___ns1__DoReauthorization;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2353,7 +2374,7 @@ int PayPalAPISoapBindingProxy::DoReauthorization(const char *endpoint, const cha
 }
 
 int PayPalAPISoapBindingProxy::DoVoid(const char *endpoint, const char *soap_action, _ns1__DoVoidReq *ns1__DoVoidReq, ns1__DoVoidResponseType &ns1__DoVoidResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoVoid soap_tmp___ns1__DoVoid;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2407,7 +2428,7 @@ int PayPalAPISoapBindingProxy::DoVoid(const char *endpoint, const char *soap_act
 }
 
 int PayPalAPISoapBindingProxy::DoAuthorization(const char *endpoint, const char *soap_action, _ns1__DoAuthorizationReq *ns1__DoAuthorizationReq, ns1__DoAuthorizationResponseType &ns1__DoAuthorizationResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoAuthorization soap_tmp___ns1__DoAuthorization;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2461,7 +2482,7 @@ int PayPalAPISoapBindingProxy::DoAuthorization(const char *endpoint, const char 
 }
 
 int PayPalAPISoapBindingProxy::UpdateAuthorization(const char *endpoint, const char *soap_action, _ns1__UpdateAuthorizationReq *ns1__UpdateAuthorizationReq, ns1__UpdateAuthorizationResponseType &ns1__UpdateAuthorizationResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__UpdateAuthorization soap_tmp___ns1__UpdateAuthorization;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2515,7 +2536,7 @@ int PayPalAPISoapBindingProxy::UpdateAuthorization(const char *endpoint, const c
 }
 
 int PayPalAPISoapBindingProxy::DoUATPAuthorization(const char *endpoint, const char *soap_action, _ns1__DoUATPAuthorizationReq *ns1__DoUATPAuthorizationReq, ns1__DoUATPAuthorizationResponseType &ns1__DoUATPAuthorizationResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoUATPAuthorization soap_tmp___ns1__DoUATPAuthorization;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2569,7 +2590,7 @@ int PayPalAPISoapBindingProxy::DoUATPAuthorization(const char *endpoint, const c
 }
 
 int PayPalAPISoapBindingProxy::SetCustomerBillingAgreement(const char *endpoint, const char *soap_action, _ns1__SetCustomerBillingAgreementReq *ns1__SetCustomerBillingAgreementReq, ns1__SetCustomerBillingAgreementResponseType &ns1__SetCustomerBillingAgreementResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__SetCustomerBillingAgreement soap_tmp___ns1__SetCustomerBillingAgreement;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2623,7 +2644,7 @@ int PayPalAPISoapBindingProxy::SetCustomerBillingAgreement(const char *endpoint,
 }
 
 int PayPalAPISoapBindingProxy::GetBillingAgreementCustomerDetails(const char *endpoint, const char *soap_action, _ns1__GetBillingAgreementCustomerDetailsReq *ns1__GetBillingAgreementCustomerDetailsReq, ns1__GetBillingAgreementCustomerDetailsResponseType &ns1__GetBillingAgreementCustomerDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetBillingAgreementCustomerDetails soap_tmp___ns1__GetBillingAgreementCustomerDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2677,7 +2698,7 @@ int PayPalAPISoapBindingProxy::GetBillingAgreementCustomerDetails(const char *en
 }
 
 int PayPalAPISoapBindingProxy::CreateBillingAgreement(const char *endpoint, const char *soap_action, _ns1__CreateBillingAgreementReq *ns1__CreateBillingAgreementReq, ns1__CreateBillingAgreementResponseType &ns1__CreateBillingAgreementResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__CreateBillingAgreement soap_tmp___ns1__CreateBillingAgreement;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2731,7 +2752,7 @@ int PayPalAPISoapBindingProxy::CreateBillingAgreement(const char *endpoint, cons
 }
 
 int PayPalAPISoapBindingProxy::DoReferenceTransaction(const char *endpoint, const char *soap_action, _ns1__DoReferenceTransactionReq *ns1__DoReferenceTransactionReq, ns1__DoReferenceTransactionResponseType &ns1__DoReferenceTransactionResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoReferenceTransaction soap_tmp___ns1__DoReferenceTransaction;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2785,7 +2806,7 @@ int PayPalAPISoapBindingProxy::DoReferenceTransaction(const char *endpoint, cons
 }
 
 int PayPalAPISoapBindingProxy::CreateRecurringPaymentsProfile(const char *endpoint, const char *soap_action, _ns1__CreateRecurringPaymentsProfileReq *ns1__CreateRecurringPaymentsProfileReq, ns1__CreateRecurringPaymentsProfileResponseType &ns1__CreateRecurringPaymentsProfileResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__CreateRecurringPaymentsProfile soap_tmp___ns1__CreateRecurringPaymentsProfile;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2839,7 +2860,7 @@ int PayPalAPISoapBindingProxy::CreateRecurringPaymentsProfile(const char *endpoi
 }
 
 int PayPalAPISoapBindingProxy::GetRecurringPaymentsProfileDetails(const char *endpoint, const char *soap_action, _ns1__GetRecurringPaymentsProfileDetailsReq *ns1__GetRecurringPaymentsProfileDetailsReq, ns1__GetRecurringPaymentsProfileDetailsResponseType &ns1__GetRecurringPaymentsProfileDetailsResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__GetRecurringPaymentsProfileDetails soap_tmp___ns1__GetRecurringPaymentsProfileDetails;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2893,7 +2914,7 @@ int PayPalAPISoapBindingProxy::GetRecurringPaymentsProfileDetails(const char *en
 }
 
 int PayPalAPISoapBindingProxy::ManageRecurringPaymentsProfileStatus(const char *endpoint, const char *soap_action, _ns1__ManageRecurringPaymentsProfileStatusReq *ns1__ManageRecurringPaymentsProfileStatusReq, ns1__ManageRecurringPaymentsProfileStatusResponseType &ns1__ManageRecurringPaymentsProfileStatusResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__ManageRecurringPaymentsProfileStatus soap_tmp___ns1__ManageRecurringPaymentsProfileStatus;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -2947,7 +2968,7 @@ int PayPalAPISoapBindingProxy::ManageRecurringPaymentsProfileStatus(const char *
 }
 
 int PayPalAPISoapBindingProxy::BillOutstandingAmount(const char *endpoint, const char *soap_action, _ns1__BillOutstandingAmountReq *ns1__BillOutstandingAmountReq, ns1__BillOutstandingAmountResponseType &ns1__BillOutstandingAmountResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__BillOutstandingAmount soap_tmp___ns1__BillOutstandingAmount;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -3001,7 +3022,7 @@ int PayPalAPISoapBindingProxy::BillOutstandingAmount(const char *endpoint, const
 }
 
 int PayPalAPISoapBindingProxy::UpdateRecurringPaymentsProfile(const char *endpoint, const char *soap_action, _ns1__UpdateRecurringPaymentsProfileReq *ns1__UpdateRecurringPaymentsProfileReq, ns1__UpdateRecurringPaymentsProfileResponseType &ns1__UpdateRecurringPaymentsProfileResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__UpdateRecurringPaymentsProfile soap_tmp___ns1__UpdateRecurringPaymentsProfile;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -3055,7 +3076,7 @@ int PayPalAPISoapBindingProxy::UpdateRecurringPaymentsProfile(const char *endpoi
 }
 
 int PayPalAPISoapBindingProxy::DoNonReferencedCredit(const char *endpoint, const char *soap_action, _ns1__DoNonReferencedCreditReq *ns1__DoNonReferencedCreditReq, ns1__DoNonReferencedCreditResponseType &ns1__DoNonReferencedCreditResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__DoNonReferencedCredit soap_tmp___ns1__DoNonReferencedCredit;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -3109,7 +3130,7 @@ int PayPalAPISoapBindingProxy::DoNonReferencedCredit(const char *endpoint, const
 }
 
 int PayPalAPISoapBindingProxy::ReverseTransaction(const char *endpoint, const char *soap_action, _ns1__ReverseTransactionReq *ns1__ReverseTransactionReq, ns1__ReverseTransactionResponseType &ns1__ReverseTransactionResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__ReverseTransaction soap_tmp___ns1__ReverseTransaction;
 	if (endpoint)
 		soap_endpoint = endpoint;
@@ -3163,7 +3184,7 @@ int PayPalAPISoapBindingProxy::ReverseTransaction(const char *endpoint, const ch
 }
 
 int PayPalAPISoapBindingProxy::ExternalRememberMeOptOut(const char *endpoint, const char *soap_action, _ns1__ExternalRememberMeOptOutReq *ns1__ExternalRememberMeOptOutReq, ns1__ExternalRememberMeOptOutResponseType &ns1__ExternalRememberMeOptOutResponse)
-{	struct soap *soap = this;
+{	struct soap *soap = this->soap;
 	struct __ns1__ExternalRememberMeOptOut soap_tmp___ns1__ExternalRememberMeOptOut;
 	if (endpoint)
 		soap_endpoint = endpoint;

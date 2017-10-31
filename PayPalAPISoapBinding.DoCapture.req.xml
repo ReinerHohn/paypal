@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <ns1:DoCaptureReq>
+    <ns1:DoCaptureRequest>
+     <ns1:AuthorizationID></ns1:AuthorizationID>
+     <ns1:Amount currencyID="AFA"></ns1:Amount>
+     <ns1:CompleteType>NotComplete</ns1:CompleteType>
+     <ns1:Note></ns1:Note>
+     <ns1:InvoiceID></ns1:InvoiceID>
+     <ns3:EnhancedData>
+      <ns3:AirlineItinerary>
+       <ns3:PassengerName></ns3:PassengerName>
+       <ns3:IssueDate></ns3:IssueDate>
+       <ns3:TravelAgencyName></ns3:TravelAgencyName>
+       <ns3:TravelAgencyCode></ns3:TravelAgencyCode>
+       <ns3:TicketNumber></ns3:TicketNumber>
+       <ns3:IssuingCarrierCode></ns3:IssuingCarrierCode>
+       <ns3:CustomerCode></ns3:CustomerCode>
+       <ns3:TotalFare currencyID="AFA"></ns3:TotalFare>
+       <ns3:TotalTaxes currencyID="AFA"></ns3:TotalTaxes>
+       <ns3:TotalFee currencyID="AFA"></ns3:TotalFee>
+       <ns3:RestrictedTicket></ns3:RestrictedTicket>
+       <ns3:ClearingSequence></ns3:ClearingSequence>
+       <ns3:ClearingCount></ns3:ClearingCount>
+       <ns3:FlightDetails>
+       </ns3:FlightDetails>
+       <ns3:FlightDetails>
+       </ns3:FlightDetails>
+      </ns3:AirlineItinerary>
+     </ns3:EnhancedData>
+     <ns1:Descriptor></ns1:Descriptor>
+     <ns3:MerchantStoreDetails>
+      <ns3:StoreID></ns3:StoreID>
+      <ns3:TerminalID></ns3:TerminalID>
+     </ns3:MerchantStoreDetails>
+     <ns1:MsgSubID></ns1:MsgSubID>
+     <ns3:MerchantData>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+     </ns3:MerchantData>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:ErrorLanguage></ns1:ErrorLanguage>
+     <ns1:Version></ns1:Version>
+     <!-- extensibility element(s) -->
+    </ns1:DoCaptureRequest>
+   </ns1:DoCaptureReq>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

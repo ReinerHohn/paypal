@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <ns1:RefundTransactionReq>
+    <ns1:RefundTransactionRequest>
+     <ns1:TransactionID></ns1:TransactionID>
+     <ns1:PayerID></ns1:PayerID>
+     <ns1:InvoiceID></ns1:InvoiceID>
+     <ns1:RefundType>Other</ns1:RefundType>
+     <ns1:Amount currencyID="AFA"></ns1:Amount>
+     <ns1:ShippingAmount currencyID="AFA"></ns1:ShippingAmount>
+     <ns1:TaxAmount currencyID="AFA"></ns1:TaxAmount>
+     <ns1:Memo></ns1:Memo>
+     <ns1:RetryUntil>2017-10-31T23:05:26Z</ns1:RetryUntil>
+     <ns1:RefundSource>any</ns1:RefundSource>
+     <ns1:RefundAdvice>false</ns1:RefundAdvice>
+     <ns3:MerchantStoreDetails>
+      <ns3:StoreID></ns3:StoreID>
+      <ns3:TerminalID></ns3:TerminalID>
+     </ns3:MerchantStoreDetails>
+     <ns3:RefundItemDetails>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:EAN></ns3:EAN>
+      <ns3:SKU></ns3:SKU>
+      <ns3:ReturnPolicyIdentifier></ns3:ReturnPolicyIdentifier>
+      <ns3:Price currencyID="AFA"></ns3:Price>
+      <ns3:ItemPrice currencyID="AFA"></ns3:ItemPrice>
+      <ns3:ItemCount>0.0</ns3:ItemCount>
+      <ns3:ItemCountUnit>EA</ns3:ItemCountUnit>
+      <ns3:Discount>
+       <ns3:Name></ns3:Name>
+       <ns3:Description></ns3:Description>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+       <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+       <ns3:RedeemedOfferID></ns3:RedeemedOfferID>
+      </ns3:Discount>
+      <ns3:Discount>
+       <ns3:Name></ns3:Name>
+       <ns3:Description></ns3:Description>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+       <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+       <ns3:RedeemedOfferID></ns3:RedeemedOfferID>
+      </ns3:Discount>
+      <ns3:Taxable>false</ns3:Taxable>
+      <ns3:TaxRate>0.0</ns3:TaxRate>
+      <ns3:AdditionalFees>
+       <ns3:Type></ns3:Type>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+      </ns3:AdditionalFees>
+      <ns3:AdditionalFees>
+       <ns3:Type></ns3:Type>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+      </ns3:AdditionalFees>
+      <ns3:Reimbursable>false</ns3:Reimbursable>
+      <ns3:MPN></ns3:MPN>
+      <ns3:ISBN></ns3:ISBN>
+      <ns3:PLU></ns3:PLU>
+      <ns3:ModelNumber></ns3:ModelNumber>
+      <ns3:StyleNumber></ns3:StyleNumber>
+     </ns3:RefundItemDetails>
+     <ns3:RefundItemDetails>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:EAN></ns3:EAN>
+      <ns3:SKU></ns3:SKU>
+      <ns3:ReturnPolicyIdentifier></ns3:ReturnPolicyIdentifier>
+      <ns3:Price currencyID="AFA"></ns3:Price>
+      <ns3:ItemPrice currencyID="AFA"></ns3:ItemPrice>
+      <ns3:ItemCount>0.0</ns3:ItemCount>
+      <ns3:ItemCountUnit>EA</ns3:ItemCountUnit>
+      <ns3:Discount>
+       <ns3:Name></ns3:Name>
+       <ns3:Description></ns3:Description>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+       <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+       <ns3:RedeemedOfferID></ns3:RedeemedOfferID>
+      </ns3:Discount>
+      <ns3:Discount>
+       <ns3:Name></ns3:Name>
+       <ns3:Description></ns3:Description>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+       <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+       <ns3:RedeemedOfferID></ns3:RedeemedOfferID>
+      </ns3:Discount>
+      <ns3:Taxable>false</ns3:Taxable>
+      <ns3:TaxRate>0.0</ns3:TaxRate>
+      <ns3:AdditionalFees>
+       <ns3:Type></ns3:Type>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+      </ns3:AdditionalFees>
+      <ns3:AdditionalFees>
+       <ns3:Type></ns3:Type>
+       <ns3:Amount currencyID="AFA"></ns3:Amount>
+      </ns3:AdditionalFees>
+      <ns3:Reimbursable>false</ns3:Reimbursable>
+      <ns3:MPN></ns3:MPN>
+      <ns3:ISBN></ns3:ISBN>
+      <ns3:PLU></ns3:PLU>
+      <ns3:ModelNumber></ns3:ModelNumber>
+      <ns3:StyleNumber></ns3:StyleNumber>
+     </ns3:RefundItemDetails>
+     <ns1:MsgSubID></ns1:MsgSubID>
+     <ns3:MerchantData>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+     </ns3:MerchantData>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:ErrorLanguage></ns1:ErrorLanguage>
+     <ns1:Version></ns1:Version>
+     <!-- extensibility element(s) -->
+    </ns1:RefundTransactionRequest>
+   </ns1:RefundTransactionReq>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

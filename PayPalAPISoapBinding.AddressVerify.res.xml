@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <ns1:AddressVerifyResponse>
+   <ns1:ConfirmationCode>None</ns1:ConfirmationCode>
+   <ns1:StreetMatch>None</ns1:StreetMatch>
+   <ns1:ZipMatch>None</ns1:ZipMatch>
+   <ns1:CountryCode>AF</ns1:CountryCode>
+   <ns1:PayPalToken></ns1:PayPalToken>
+  </ns1:AddressVerifyResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

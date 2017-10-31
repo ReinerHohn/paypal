@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <ns1:SetMobileCheckoutReq>
+    <ns1:SetMobileCheckoutRequest>
+     <ns3:SetMobileCheckoutRequestDetails>
+      <ns3:BuyerPhone>
+       <ns3:CountryCode></ns3:CountryCode>
+       <ns3:PhoneNumber></ns3:PhoneNumber>
+       <ns3:Extension></ns3:Extension>
+      </ns3:BuyerPhone>
+      <ns3:ItemAmount currencyID="AFA"></ns3:ItemAmount>
+      <ns3:Tax currencyID="AFA"></ns3:Tax>
+      <ns3:Shipping currencyID="AFA"></ns3:Shipping>
+      <ns3:ItemName></ns3:ItemName>
+      <ns3:ItemNumber></ns3:ItemNumber>
+      <ns3:Custom></ns3:Custom>
+      <ns3:InvoiceID></ns3:InvoiceID>
+      <ns3:ReturnURL></ns3:ReturnURL>
+      <ns3:CancelURL></ns3:CancelURL>
+      <ns3:AddressDisplayOptions>0</ns3:AddressDisplayOptions>
+      <ns3:SharePhone>0</ns3:SharePhone>
+      <ns3:ShipToAddress>
+       <ns3:Name></ns3:Name>
+       <ns3:Street1></ns3:Street1>
+       <ns3:Street2></ns3:Street2>
+       <ns3:CityName></ns3:CityName>
+       <ns3:StateOrProvince></ns3:StateOrProvince>
+       <ns3:Country>AF</ns3:Country>
+       <ns3:CountryName></ns3:CountryName>
+       <ns3:Phone></ns3:Phone>
+       <ns3:PostalCode></ns3:PostalCode>
+       <ns3:AddressID></ns3:AddressID>
+       <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+       <ns3:ExternalAddressID></ns3:ExternalAddressID>
+       <ns3:InternationalName></ns3:InternationalName>
+       <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+       <ns3:InternationalStreet></ns3:InternationalStreet>
+       <ns3:AddressStatus>None</ns3:AddressStatus>
+       <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+      </ns3:ShipToAddress>
+      <ns3:BuyerEmail></ns3:BuyerEmail>
+     </ns3:SetMobileCheckoutRequestDetails>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:ErrorLanguage></ns1:ErrorLanguage>
+     <ns1:Version></ns1:Version>
+     <!-- extensibility element(s) -->
+    </ns1:SetMobileCheckoutRequest>
+   </ns1:SetMobileCheckoutReq>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

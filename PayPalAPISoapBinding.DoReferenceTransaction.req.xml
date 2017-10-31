@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <ns1:DoReferenceTransactionReq>
+    <ns1:DoReferenceTransactionRequest>
+     <ns3:DoReferenceTransactionRequestDetails>
+      <ns3:ReferenceID></ns3:ReferenceID>
+      <ns3:PaymentAction>None</ns3:PaymentAction>
+      <ns3:PaymentType>Any</ns3:PaymentType>
+      <ns3:PaymentDetails>
+       <ns3:OrderTotal currencyID="AFA"></ns3:OrderTotal>
+       <ns3:ItemTotal currencyID="AFA"></ns3:ItemTotal>
+       <ns3:ShippingTotal currencyID="AFA"></ns3:ShippingTotal>
+       <ns3:HandlingTotal currencyID="AFA"></ns3:HandlingTotal>
+       <ns3:TaxTotal currencyID="AFA"></ns3:TaxTotal>
+       <ns3:OrderDescription></ns3:OrderDescription>
+       <ns3:Custom></ns3:Custom>
+       <ns3:InvoiceID></ns3:InvoiceID>
+       <ns3:ButtonSource></ns3:ButtonSource>
+       <ns3:NotifyURL></ns3:NotifyURL>
+       <ns3:ShipToAddress>
+       </ns3:ShipToAddress>
+       <ns3:MultiShipping></ns3:MultiShipping>
+       <ns3:FulfillmentReferenceNumber></ns3:FulfillmentReferenceNumber>
+       <ns3:FulfillmentAddress>
+       </ns3:FulfillmentAddress>
+       <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
+       <ns3:LocationType>Consumer</ns3:LocationType>
+       <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
+       <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+       <ns3:PaymentDetailsItem>
+       </ns3:PaymentDetailsItem>
+       <ns3:PaymentDetailsItem>
+       </ns3:PaymentDetailsItem>
+       <ns3:InsuranceTotal currencyID="AFA"></ns3:InsuranceTotal>
+       <ns3:ShippingDiscount currencyID="AFA"></ns3:ShippingDiscount>
+       <ns3:InsuranceOptionOffered></ns3:InsuranceOptionOffered>
+       <ns3:AllowedPaymentMethod>Default</ns3:AllowedPaymentMethod>
+       <ns3:EnhancedPaymentData>
+       </ns3:EnhancedPaymentData>
+       <ns3:SellerDetails>
+       </ns3:SellerDetails>
+       <ns3:NoteText></ns3:NoteText>
+       <ns3:TransactionId></ns3:TransactionId>
+       <ns3:PaymentAction>None</ns3:PaymentAction>
+       <ns3:PaymentRequestID></ns3:PaymentRequestID>
+       <ns3:OrderURL></ns3:OrderURL>
+       <ns3:SoftDescriptor></ns3:SoftDescriptor>
+       <ns3:BranchLevel>0</ns3:BranchLevel>
+       <ns3:OfferDetails>
+       </ns3:OfferDetails>
+       <ns3:Recurring>Y</ns3:Recurring>
+       <ns3:PaymentReason>None</ns3:PaymentReason>
+       <ns3:LocationID></ns3:LocationID>
+       <ns3:RedeemedOffers>
+       </ns3:RedeemedOffers>
+       <ns3:RedeemedOffers>
+       </ns3:RedeemedOffers>
+       <ns3:CummulativePoints>
+       </ns3:CummulativePoints>
+       <ns3:CummulativePoints>
+       </ns3:CummulativePoints>
+       <ns3:MerchantData>
+       </ns3:MerchantData>
+       <ns3:MerchantData>
+       </ns3:MerchantData>
+      </ns3:PaymentDetails>
+      <ns3:CreditCard>
+       <ns3:CreditCardNumberType>
+       </ns3:CreditCardNumberType>
+       <ns3:ExpMonth>0</ns3:ExpMonth>
+       <ns3:ExpYear>0</ns3:ExpYear>
+       <ns3:CardOwnerName>
+       </ns3:CardOwnerName>
+       <ns3:BillingAddress>
+       </ns3:BillingAddress>
+       <ns3:CVV2></ns3:CVV2>
+       <ns3:StartMonth>0</ns3:StartMonth>
+       <ns3:StartYear>0</ns3:StartYear>
+       <ns3:IssueNumber></ns3:IssueNumber>
+      </ns3:CreditCard>
+      <ns3:IPAddress></ns3:IPAddress>
+      <ns3:RiskSessionCorrelationID></ns3:RiskSessionCorrelationID>
+      <ns3:MerchantSessionId></ns3:MerchantSessionId>
+      <ns3:ReqConfirmShipping></ns3:ReqConfirmShipping>
+      <ns3:SoftDescriptor></ns3:SoftDescriptor>
+      <ns3:SoftDescriptorCity></ns3:SoftDescriptorCity>
+      <ns3:SenderDetails>
+       <ns3:DeviceDetails>
+       </ns3:DeviceDetails>
+      </ns3:SenderDetails>
+      <ns3:MsgSubID></ns3:MsgSubID>
+     </ns3:DoReferenceTransactionRequestDetails>
+     <ns1:ReturnFMFDetails>0</ns1:ReturnFMFDetails>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:ErrorLanguage></ns1:ErrorLanguage>
+     <ns1:Version></ns1:Version>
+     <!-- extensibility element(s) -->
+    </ns1:DoReferenceTransactionRequest>
+   </ns1:DoReferenceTransactionReq>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,109 @@
+WARNING: can't open config file: D:\Entwicklung\Tools\OpenSSL\bin\openssl.cfg
+CONNECTED(000001B4)
+depth=2 C = US, O = "VeriSign, Inc.", OU = VeriSign Trust Network, OU = "(c) 2006 VeriSign, Inc. - For authorized use only", CN = VeriSign Class 3 Public Primary Certification Authority - G5
+verify return:1
+depth=1 C = US, O = Symantec Corporation, OU = Symantec Trust Network, CN = Symantec Class 3 Secure Server CA - G4
+verify return:1
+depth=0 C = US, ST = California, L = San Jose, O = "PayPal, Inc.", OU = PayPal Production, CN = api-3t.sandbox.paypal.com
+verify return:1
+---
+Certificate chain
+ 0 s:/C=US/ST=California/L=San Jose/O=PayPal, Inc./OU=PayPal Production/CN=api-3t.sandbox.paypal.com
+   i:/C=US/O=Symantec Corporation/OU=Symantec Trust Network/CN=Symantec Class 3 Secure Server CA - G4
+-----BEGIN CERTIFICATE-----
+MIIGiDCCBXCgAwIBAgIQSmPFPGKFy6vVcS32CMWsdDANBgkqhkiG9w0BAQsFADB+
+MQswCQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAd
+BgNVBAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVj
+IENsYXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MB4XDTE2MDExNDAwMDAwMFoX
+DTE4MDExNDIzNTk1OVowgYwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9y
+bmlhMREwDwYDVQQHDAhTYW4gSm9zZTEVMBMGA1UECgwMUGF5UGFsLCBJbmMuMRow
+GAYDVQQLDBFQYXlQYWwgUHJvZHVjdGlvbjEiMCAGA1UEAwwZYXBpLTN0LnNhbmRi
+b3gucGF5cGFsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANXB
+QRl1wRXByqGLGt64dqkOJ8srJSPcqYwjA+KL3JuSmWKgvHUKg581H5p6/aX5BD92
+ZmMLMrE3gtQnQU9cfatkw7+sFNtDDXh4gJhNAWz1Mw7VuDTRzk4N0YcO55Wy2WQ4
+/Z2fYHfL6IoohXfqtYdFY1JzOXkqunPfhsSOKTb03Lf2k4hniwoMVsn8rOSBklNZ
+6knC4iiaEOpo/EGtYylbpnoRg1aQP+1Oyc+bwG1LPT64XZA/4frcm1gKnFYBYtRM
+RKBmQsF88SjSNUP9DiriHiD8tXryy2xAoQml+bfkslb5FJYLP7xmncQaXQRk/YUo
+ehdW8Git3BQpwNZS9f0CAwEAAaOCAvEwggLtMCQGA1UdEQQdMBuCGWFwaS0zdC5z
+YW5kYm94LnBheXBhbC5jb20wCQYDVR0TBAIwADAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMGEGA1UdIARaMFgwVgYGZ4EMAQIC
+MEwwIwYIKwYBBQUHAgEWF2h0dHBzOi8vZC5zeW1jYi5jb20vY3BzMCUGCCsGAQUF
+BwICMBkaF2h0dHBzOi8vZC5zeW1jYi5jb20vcnBhMB8GA1UdIwQYMBaAFF9gz2GQ
+Vd+EQxSKYCqy9Xr0QxjvMCsGA1UdHwQkMCIwIKAeoByGGmh0dHA6Ly9zcy5zeW1j
+Yi5jb20vc3MuY3JsMFcGCCsGAQUFBwEBBEswSTAfBggrBgEFBQcwAYYTaHR0cDov
+L3NzLnN5bWNkLmNvbTAmBggrBgEFBQcwAoYaaHR0cDovL3NzLnN5bWNiLmNvbS9z
+cy5jcnQwggF/BgorBgEEAdZ5AgQCBIIBbwSCAWsBaQB2AN3rHSt6DU+mIIuBrYFo
+cH4ujp0B1VyIjT0RxM227L7MAAABUkI8Bj4AAAQDAEcwRQIhAIHuCBevjKTfgyu3
+p69luk4DBTOJjBozTsnJIs+dVS7NAiASjAaBPD/bGWGXC8bayAREXvuPSr0W+xU0
+l0T6Kaje9wB3AKS5CZC0GFgUh7sTosxncAo8NZgE+RvfuON3zQ7IDdwQAAABUkI8
+Bn8AAAQDAEgwRgIhAPIWGT/KdSkWSlR3SzPA6O+sP16mpF9Mc/8BBKhAck0WAiEA
+u/ie0GvZ8wctdK8OhOnOUUQvQ8njBqd7l5s2GfRWymMAdgBo9pj4H2SCvjqM7rko
+HUz8cVFdZ5PURNEKZ6y7T0/7xAAAAVJCPAZmAAAEAwBHMEUCIHkB7wZfWQPm+ZCP
+cUAOQwutIiMSXmKFUM9GiHzJ72VoAiEAh+44zz2mRc/NcwTvQsW1BQcjL12y8gji
+UBJgtrlwZq4wDQYJKoZIhvcNAQELBQADggEBAEKkutMm4VqebHi49Zw35dFStnRb
+RD9sUIpFvuvSCTnvM0uwFGHa01hoH6XCk0mQf7Hlv8eUjQCYEjq/yOy/qd1D/0FG
+pG5QYXpiiB1rfJyGSTps6TMsSzhGJwZt6e7ZNJ29uGBvfaYi5S+qbxqUkEUIOoeE
++K77MUD5ouwN6mm3azvemVMoJEPwjbVUZZwfLlxBQbwX4C2Kdihrn/r+AkeYiLej
+Q+1pdnXz9Hwj3SM+uZWpu8f7kbczSWsuQmSV4gparNkOTjk5TwJvyrS3z+DQW674
+FdfkrYmxqiiaELhsMPhRyjKce5HA2ol1GsnJ0IJCPjJc2o40IiL1AL552eA=
+-----END CERTIFICATE-----
+ 1 s:/C=US/O=Symantec Corporation/OU=Symantec Trust Network/CN=Symantec Class 3 Secure Server CA - G4
+   i:/C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=(c) 2006 VeriSign, Inc. - For authorized use only/CN=VeriSign Class 3 Public Primary Certification Authority - G5
+-----BEGIN CERTIFICATE-----
+MIIFODCCBCCgAwIBAgIQUT+5dDhwtzRAQY0wkwaZ/zANBgkqhkiG9w0BAQsFADCB
+yjELMAkGA1UEBhMCVVMxFzAVBgNVBAoTDlZlcmlTaWduLCBJbmMuMR8wHQYDVQQL
+ExZWZXJpU2lnbiBUcnVzdCBOZXR3b3JrMTowOAYDVQQLEzEoYykgMjAwNiBWZXJp
+U2lnbiwgSW5jLiAtIEZvciBhdXRob3JpemVkIHVzZSBvbmx5MUUwQwYDVQQDEzxW
+ZXJpU2lnbiBDbGFzcyAzIFB1YmxpYyBQcmltYXJ5IENlcnRpZmljYXRpb24gQXV0
+aG9yaXR5IC0gRzUwHhcNMTMxMDMxMDAwMDAwWhcNMjMxMDMwMjM1OTU5WjB+MQsw
+CQYDVQQGEwJVUzEdMBsGA1UEChMUU3ltYW50ZWMgQ29ycG9yYXRpb24xHzAdBgNV
+BAsTFlN5bWFudGVjIFRydXN0IE5ldHdvcmsxLzAtBgNVBAMTJlN5bWFudGVjIENs
+YXNzIDMgU2VjdXJlIFNlcnZlciBDQSAtIEc0MIIBIjANBgkqhkiG9w0BAQEFAAOC
+AQ8AMIIBCgKCAQEAstgFyhx0LbUXVjnFSlIJluhL2AzxaJ+aQihiw6UwU35VEYJb
+A3oNL+F5BMm0lncZgQGUWfm893qZJ4Itt4PdWid/sgN6nFMl6UgfRk/InSn4vnlW
+9vf92Tpo2otLgjNBEsPIPMzWlnqEIRoiBAMnF4scaGGTDw5RgDMdtLXO637QYqzu
+s3sBdO9pNevK1T2p7peYyo2qRA4lmUoVlqTObQJUHypqJuIGOmNIrLRM0XWTUP8T
+L9ba4cYY9Z/JJV3zADreJk20KQnNDz0jbxZKgRb78oMQw7jW2FUyPfG9D72MUpVK
+Fpd6UiFjdS8W+cRmvvW1Cdj/JwDNRHxvSz+w9wIDAQABo4IBYzCCAV8wEgYDVR0T
+AQH/BAgwBgEB/wIBADAwBgNVHR8EKTAnMCWgI6Ahhh9odHRwOi8vczEuc3ltY2Iu
+Y29tL3BjYTMtZzUuY3JsMA4GA1UdDwEB/wQEAwIBBjAvBggrBgEFBQcBAQQjMCEw
+HwYIKwYBBQUHMAGGE2h0dHA6Ly9zMi5zeW1jYi5jb20wawYDVR0gBGQwYjBgBgpg
+hkgBhvhFAQc2MFIwJgYIKwYBBQUHAgEWGmh0dHA6Ly93d3cuc3ltYXV0aC5jb20v
+Y3BzMCgGCCsGAQUFBwICMBwaGmh0dHA6Ly93d3cuc3ltYXV0aC5jb20vcnBhMCkG
+A1UdEQQiMCCkHjAcMRowGAYDVQQDExFTeW1hbnRlY1BLSS0xLTUzNDAdBgNVHQ4E
+FgQUX2DPYZBV34RDFIpgKrL1evRDGO8wHwYDVR0jBBgwFoAUf9Nlp8Ld7LvwMAnz
+Qzn6Aq8zMTMwDQYJKoZIhvcNAQELBQADggEBAF6UVkndji1l9cE2UbYD49qecxny
+H1mrWH5sJgUs+oHXXCMXIiw3k/eG7IXmsKP9H+IyqEVv4dn7ua/ScKAyQmW/hP4W
+Ko8/xabWo5N9Q+l0IZE1KPRj6S7t9/Vcf0uatSDpCr3gRRAMFJSaXaXjS5HoJJtG
+QGX0InLNmfiIEfXzf+YzguaoxX7+0AjiJVgIcWjmzaLmFN5OUiQt/eV5E1PnXi8t
+TRttQBVSK/eHiXgSgW7ZTaoteNTCLD0IX4eRnh8OsN4wUmSGiaqdZpwOdgyA8nTY
+Kvi4Os7X1g8RvmurFPW9QaAiY4nxug9vKWNmLT+sjHLF+8fk1A/yO0+MKcc=
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=/C=US/ST=California/L=San Jose/O=PayPal, Inc./OU=PayPal Production/CN=api-3t.sandbox.paypal.com
+issuer=/C=US/O=Symantec Corporation/OU=Symantec Trust Network/CN=Symantec Class 3 Secure Server CA - G4
+---
+No client certificate CA names sent
+---
+SSL handshake has read 3220 bytes and written 665 bytes
+---
+New, TLSv1/SSLv3, Cipher is AES256-SHA256
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : AES256-SHA256
+    Session-ID: E8275BF09C4A2FB590AFD9ECC65396F68A3C34BEA2E1007962F2EA101463668D
+    Session-ID-ctx:
+    Master-Key: 5DB2C97D5CDEB4A0112713D57A85EF79DFE30AED37DC90BE4B231127870909E1AB742959E14587B6C046D7C3C6B38379
+    Key-Arg   : None
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1509441394
+    Timeout   : 300 (sec)
+    Verify return code: 0 (ok)

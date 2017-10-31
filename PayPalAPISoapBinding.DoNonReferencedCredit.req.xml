@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+   <ns1:DoNonReferencedCreditReq>
+    <ns1:DoNonReferencedCreditRequest>
+     <ns3:DoNonReferencedCreditRequestDetails>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:NetAmount currencyID="AFA"></ns3:NetAmount>
+      <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
+      <ns3:ShippingAmount currencyID="AFA"></ns3:ShippingAmount>
+      <ns3:CreditCard>
+       <ns3:CreditCardType>Visa</ns3:CreditCardType>
+       <ns3:CreditCardNumber></ns3:CreditCardNumber>
+       <ns3:ExpMonth>0</ns3:ExpMonth>
+       <ns3:ExpYear>0</ns3:ExpYear>
+       <ns3:CardOwner>
+       </ns3:CardOwner>
+       <ns3:CVV2></ns3:CVV2>
+       <ns3:StartMonth>0</ns3:StartMonth>
+       <ns3:StartYear>0</ns3:StartYear>
+       <ns3:IssueNumber></ns3:IssueNumber>
+       <ns3:ThreeDSecureRequest>
+       </ns3:ThreeDSecureRequest>
+      </ns3:CreditCard>
+      <ns3:ReceiverEmail></ns3:ReceiverEmail>
+      <ns3:Comment></ns3:Comment>
+     </ns3:DoNonReferencedCreditRequestDetails>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:DetailLevel>ReturnAll</ns1:DetailLevel>
+     <ns1:ErrorLanguage></ns1:ErrorLanguage>
+     <ns1:Version></ns1:Version>
+     <!-- extensibility element(s) -->
+    </ns1:DoNonReferencedCreditRequest>
+   </ns1:DoNonReferencedCreditReq>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

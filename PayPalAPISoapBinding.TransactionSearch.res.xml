@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <ns1:TransactionSearchResponse>
+   <ns3:PaymentTransactions>
+    <ns3:Timestamp>2017-10-31T23:05:27Z</ns3:Timestamp>
+    <ns3:Timezone></ns3:Timezone>
+    <ns3:Type></ns3:Type>
+    <ns3:Payer></ns3:Payer>
+    <ns3:PayerDisplayName></ns3:PayerDisplayName>
+    <ns3:TransactionID></ns3:TransactionID>
+    <ns3:Status></ns3:Status>
+    <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
+    <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
+    <ns3:NetAmount currencyID="AFA"></ns3:NetAmount>
+   </ns3:PaymentTransactions>
+   <ns3:PaymentTransactions>
+    <ns3:Timestamp>2017-10-31T23:05:27Z</ns3:Timestamp>
+    <ns3:Timezone></ns3:Timezone>
+    <ns3:Type></ns3:Type>
+    <ns3:Payer></ns3:Payer>
+    <ns3:PayerDisplayName></ns3:PayerDisplayName>
+    <ns3:TransactionID></ns3:TransactionID>
+    <ns3:Status></ns3:Status>
+    <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
+    <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
+    <ns3:NetAmount currencyID="AFA"></ns3:NetAmount>
+   </ns3:PaymentTransactions>
+  </ns1:TransactionSearchResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ns2="urn:ebay:apis:CoreComponentTypes"
+    xmlns:ns4="urn:ebay:apis:EnhancedDataTypes"
+    xmlns:ns3="urn:ebay:apis:eBLBaseComponents"
+    xmlns:ns1="urn:ebay:api:PayPalAPI">
+ <SOAP-ENV:Header>
+  <ns1:RequesterCredentials>
+   <ns3:eBayAuthToken></ns3:eBayAuthToken>
+   <ns3:HardExpirationWarning></ns3:HardExpirationWarning>
+   <ns3:Credentials>
+    <ns3:AppId></ns3:AppId>
+    <ns3:DevId></ns3:DevId>
+    <ns3:AuthCert></ns3:AuthCert>
+    <ns3:Username></ns3:Username>
+    <ns3:Password></ns3:Password>
+    <ns3:Signature></ns3:Signature>
+    <ns3:Subject></ns3:Subject>
+    <ns3:AuthToken></ns3:AuthToken>
+   </ns3:Credentials>
+  </ns1:RequesterCredentials>
+ </SOAP-ENV:Header>
+ <SOAP-ENV:Body>
+  <ns1:GetExpressCheckoutDetailsResponse>
+   <ns3:GetExpressCheckoutDetailsResponseDetails>
+    <ns3:Token></ns3:Token>
+    <ns3:PayerInfo>
+     <ns3:Payer></ns3:Payer>
+     <ns3:PayerID></ns3:PayerID>
+     <ns3:PayerStatus>verified</ns3:PayerStatus>
+     <ns3:PayerName>
+      <ns3:Salutation></ns3:Salutation>
+      <ns3:FirstName></ns3:FirstName>
+      <ns3:MiddleName></ns3:MiddleName>
+      <ns3:LastName></ns3:LastName>
+      <ns3:Suffix></ns3:Suffix>
+     </ns3:PayerName>
+     <ns3:PayerCountry>AF</ns3:PayerCountry>
+     <ns3:PayerBusiness></ns3:PayerBusiness>
+     <ns3:Address>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:Address>
+     <ns3:ContactPhone></ns3:ContactPhone>
+     <ns3:WalletItems>
+      <ns3:Type>MERCHANT_COUPON</ns3:Type>
+      <ns3:Id></ns3:Id>
+      <ns3:Description></ns3:Description>
+     </ns3:WalletItems>
+     <ns3:WalletItems>
+      <ns3:Type>MERCHANT_COUPON</ns3:Type>
+      <ns3:Id></ns3:Id>
+      <ns3:Description></ns3:Description>
+     </ns3:WalletItems>
+     <ns3:TaxIdDetails>
+      <ns3:TaxIdType></ns3:TaxIdType>
+      <ns3:TaxId></ns3:TaxId>
+     </ns3:TaxIdDetails>
+     <ns3:EnhancedPayerInfo>
+     </ns3:EnhancedPayerInfo>
+    </ns3:PayerInfo>
+    <ns3:Custom></ns3:Custom>
+    <ns3:InvoiceID></ns3:InvoiceID>
+    <ns3:ContactPhone></ns3:ContactPhone>
+    <ns3:BillingAgreementAcceptedStatus>false</ns3:BillingAgreementAcceptedStatus>
+    <ns3:RedirectRequired></ns3:RedirectRequired>
+    <ns3:BillingAddress>
+     <ns3:Name></ns3:Name>
+     <ns3:Street1></ns3:Street1>
+     <ns3:Street2></ns3:Street2>
+     <ns3:CityName></ns3:CityName>
+     <ns3:StateOrProvince></ns3:StateOrProvince>
+     <ns3:Country>AF</ns3:Country>
+     <ns3:CountryName></ns3:CountryName>
+     <ns3:Phone></ns3:Phone>
+     <ns3:PostalCode></ns3:PostalCode>
+     <ns3:AddressID></ns3:AddressID>
+     <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+     <ns3:ExternalAddressID></ns3:ExternalAddressID>
+     <ns3:InternationalName></ns3:InternationalName>
+     <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+     <ns3:InternationalStreet></ns3:InternationalStreet>
+     <ns3:AddressStatus>None</ns3:AddressStatus>
+     <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+    </ns3:BillingAddress>
+    <ns3:Note></ns3:Note>
+    <ns3:CheckoutStatus></ns3:CheckoutStatus>
+    <ns3:PayPalAdjustment currencyID="AFA"></ns3:PayPalAdjustment>
+    <ns3:PaymentDetails>
+     <ns3:OrderTotal currencyID="AFA"></ns3:OrderTotal>
+     <ns3:ItemTotal currencyID="AFA"></ns3:ItemTotal>
+     <ns3:ShippingTotal currencyID="AFA"></ns3:ShippingTotal>
+     <ns3:HandlingTotal currencyID="AFA"></ns3:HandlingTotal>
+     <ns3:TaxTotal currencyID="AFA"></ns3:TaxTotal>
+     <ns3:OrderDescription></ns3:OrderDescription>
+     <ns3:Custom></ns3:Custom>
+     <ns3:InvoiceID></ns3:InvoiceID>
+     <ns3:ButtonSource></ns3:ButtonSource>
+     <ns3:NotifyURL></ns3:NotifyURL>
+     <ns3:ShipToAddress>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:ShipToAddress>
+     <ns3:MultiShipping></ns3:MultiShipping>
+     <ns3:FulfillmentReferenceNumber></ns3:FulfillmentReferenceNumber>
+     <ns3:FulfillmentAddress>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:FulfillmentAddress>
+     <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
+     <ns3:LocationType>Consumer</ns3:LocationType>
+     <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
+     <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+     <ns3:PaymentDetailsItem>
+      <ns3:Name></ns3:Name>
+      <ns3:Number></ns3:Number>
+      <ns3:Quantity>0</ns3:Quantity>
+      <ns3:Tax currencyID="AFA"></ns3:Tax>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:EbayItemPaymentDetailsItem>
+       <ns3:ItemNumber></ns3:ItemNumber>
+       <ns3:AuctionTransactionId></ns3:AuctionTransactionId>
+       <ns3:OrderId></ns3:OrderId>
+       <ns3:CartID></ns3:CartID>
+      </ns3:EbayItemPaymentDetailsItem>
+      <ns3:PromoCode></ns3:PromoCode>
+      <ns3:ProductCategory>Other</ns3:ProductCategory>
+      <ns3:Description></ns3:Description>
+      <ns3:ItemWeight unit="">0.0</ns3:ItemWeight>
+      <ns3:ItemLength unit="">0.0</ns3:ItemLength>
+      <ns3:ItemWidth unit="">0.0</ns3:ItemWidth>
+      <ns3:ItemHeight unit="">0.0</ns3:ItemHeight>
+      <ns3:ItemURL></ns3:ItemURL>
+      <ns3:EnhancedItemData>
+      </ns3:EnhancedItemData>
+      <ns3:ItemCategory>Physical</ns3:ItemCategory>
+     </ns3:PaymentDetailsItem>
+     <ns3:PaymentDetailsItem>
+      <ns3:Name></ns3:Name>
+      <ns3:Number></ns3:Number>
+      <ns3:Quantity>0</ns3:Quantity>
+      <ns3:Tax currencyID="AFA"></ns3:Tax>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:EbayItemPaymentDetailsItem>
+       <ns3:ItemNumber></ns3:ItemNumber>
+       <ns3:AuctionTransactionId></ns3:AuctionTransactionId>
+       <ns3:OrderId></ns3:OrderId>
+       <ns3:CartID></ns3:CartID>
+      </ns3:EbayItemPaymentDetailsItem>
+      <ns3:PromoCode></ns3:PromoCode>
+      <ns3:ProductCategory>Other</ns3:ProductCategory>
+      <ns3:Description></ns3:Description>
+      <ns3:ItemWeight unit="">0.0</ns3:ItemWeight>
+      <ns3:ItemLength unit="">0.0</ns3:ItemLength>
+      <ns3:ItemWidth unit="">0.0</ns3:ItemWidth>
+      <ns3:ItemHeight unit="">0.0</ns3:ItemHeight>
+      <ns3:ItemURL></ns3:ItemURL>
+      <ns3:EnhancedItemData>
+      </ns3:EnhancedItemData>
+      <ns3:ItemCategory>Physical</ns3:ItemCategory>
+     </ns3:PaymentDetailsItem>
+     <ns3:InsuranceTotal currencyID="AFA"></ns3:InsuranceTotal>
+     <ns3:ShippingDiscount currencyID="AFA"></ns3:ShippingDiscount>
+     <ns3:InsuranceOptionOffered></ns3:InsuranceOptionOffered>
+     <ns3:AllowedPaymentMethod>Default</ns3:AllowedPaymentMethod>
+     <ns3:EnhancedPaymentData>
+      <ns3:AirlineItinerary>
+       <ns3:PassengerName></ns3:PassengerName>
+       <ns3:IssueDate></ns3:IssueDate>
+       <ns3:TravelAgencyName></ns3:TravelAgencyName>
+       <ns3:TravelAgencyCode></ns3:TravelAgencyCode>
+       <ns3:TicketNumber></ns3:TicketNumber>
+       <ns3:IssuingCarrierCode></ns3:IssuingCarrierCode>
+       <ns3:CustomerCode></ns3:CustomerCode>
+       <ns3:TotalFare currencyID="AFA"></ns3:TotalFare>
+       <ns3:TotalTaxes currencyID="AFA"></ns3:TotalTaxes>
+       <ns3:TotalFee currencyID="AFA"></ns3:TotalFee>
+       <ns3:RestrictedTicket></ns3:RestrictedTicket>
+       <ns3:ClearingSequence></ns3:ClearingSequence>
+       <ns3:ClearingCount></ns3:ClearingCount>
+       <ns3:FlightDetails>
+       </ns3:FlightDetails>
+       <ns3:FlightDetails>
+       </ns3:FlightDetails>
+      </ns3:AirlineItinerary>
+     </ns3:EnhancedPaymentData>
+     <ns3:SellerDetails>
+      <ns3:SellerId></ns3:SellerId>
+      <ns3:SellerUserName></ns3:SellerUserName>
+      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:PayPalAccountID></ns3:PayPalAccountID>
+      <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
+     </ns3:SellerDetails>
+     <ns3:NoteText></ns3:NoteText>
+     <ns3:TransactionId></ns3:TransactionId>
+     <ns3:PaymentAction>None</ns3:PaymentAction>
+     <ns3:PaymentRequestID></ns3:PaymentRequestID>
+     <ns3:OrderURL></ns3:OrderURL>
+     <ns3:SoftDescriptor></ns3:SoftDescriptor>
+     <ns3:BranchLevel>0</ns3:BranchLevel>
+     <ns3:OfferDetails>
+      <ns3:OfferCode></ns3:OfferCode>
+      <ns3:BMLOfferInfo>
+       <ns3:OfferTrackingID></ns3:OfferTrackingID>
+      </ns3:BMLOfferInfo>
+     </ns3:OfferDetails>
+     <ns3:Recurring>Y</ns3:Recurring>
+     <ns3:PaymentReason>None</ns3:PaymentReason>
+     <ns3:LocationID></ns3:LocationID>
+     <ns3:RedeemedOffers>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:RedeemedOffers>
+     <ns3:RedeemedOffers>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:RedeemedOffers>
+     <ns3:CummulativePoints>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:CummulativePoints>
+     <ns3:CummulativePoints>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:CummulativePoints>
+     <ns3:MerchantData>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+     </ns3:MerchantData>
+     <ns3:MerchantData>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+     </ns3:MerchantData>
+    </ns3:PaymentDetails>
+    <ns3:PaymentDetails>
+     <ns3:OrderTotal currencyID="AFA"></ns3:OrderTotal>
+     <ns3:ItemTotal currencyID="AFA"></ns3:ItemTotal>
+     <ns3:ShippingTotal currencyID="AFA"></ns3:ShippingTotal>
+     <ns3:HandlingTotal currencyID="AFA"></ns3:HandlingTotal>
+     <ns3:TaxTotal currencyID="AFA"></ns3:TaxTotal>
+     <ns3:OrderDescription></ns3:OrderDescription>
+     <ns3:Custom></ns3:Custom>
+     <ns3:InvoiceID></ns3:InvoiceID>
+     <ns3:ButtonSource></ns3:ButtonSource>
+     <ns3:NotifyURL></ns3:NotifyURL>
+     <ns3:ShipToAddress>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:ShipToAddress>
+     <ns3:MultiShipping></ns3:MultiShipping>
+     <ns3:FulfillmentReferenceNumber></ns3:FulfillmentReferenceNumber>
+     <ns3:FulfillmentAddress>
+      <ns3:Name></ns3:Name>
+      <ns3:Street1></ns3:Street1>
+      <ns3:Street2></ns3:Street2>
+      <ns3:CityName></ns3:CityName>
+      <ns3:StateOrProvince></ns3:StateOrProvince>
+      <ns3:Country>AF</ns3:Country>
+      <ns3:CountryName></ns3:CountryName>
+      <ns3:Phone></ns3:Phone>
+      <ns3:PostalCode></ns3:PostalCode>
+      <ns3:AddressID></ns3:AddressID>
+      <ns3:AddressOwner>PayPal</ns3:AddressOwner>
+      <ns3:ExternalAddressID></ns3:ExternalAddressID>
+      <ns3:InternationalName></ns3:InternationalName>
+      <ns3:InternationalStateAndCity></ns3:InternationalStateAndCity>
+      <ns3:InternationalStreet></ns3:InternationalStreet>
+      <ns3:AddressStatus>None</ns3:AddressStatus>
+      <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
+     </ns3:FulfillmentAddress>
+     <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
+     <ns3:LocationType>Consumer</ns3:LocationType>
+     <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
+     <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+     <ns3:PaymentDetailsItem>
+      <ns3:Name></ns3:Name>
+      <ns3:Number></ns3:Number>
+      <ns3:Quantity>0</ns3:Quantity>
+      <ns3:Tax currencyID="AFA"></ns3:Tax>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:EbayItemPaymentDetailsItem>
+       <ns3:ItemNumber></ns3:ItemNumber>
+       <ns3:AuctionTransactionId></ns3:AuctionTransactionId>
+       <ns3:OrderId></ns3:OrderId>
+       <ns3:CartID></ns3:CartID>
+      </ns3:EbayItemPaymentDetailsItem>
+      <ns3:PromoCode></ns3:PromoCode>
+      <ns3:ProductCategory>Other</ns3:ProductCategory>
+      <ns3:Description></ns3:Description>
+      <ns3:ItemWeight unit="">0.0</ns3:ItemWeight>
+      <ns3:ItemLength unit="">0.0</ns3:ItemLength>
+      <ns3:ItemWidth unit="">0.0</ns3:ItemWidth>
+      <ns3:ItemHeight unit="">0.0</ns3:ItemHeight>
+      <ns3:ItemURL></ns3:ItemURL>
+      <ns3:EnhancedItemData>
+      </ns3:EnhancedItemData>
+      <ns3:ItemCategory>Physical</ns3:ItemCategory>
+     </ns3:PaymentDetailsItem>
+     <ns3:PaymentDetailsItem>
+      <ns3:Name></ns3:Name>
+      <ns3:Number></ns3:Number>
+      <ns3:Quantity>0</ns3:Quantity>
+      <ns3:Tax currencyID="AFA"></ns3:Tax>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:EbayItemPaymentDetailsItem>
+       <ns3:ItemNumber></ns3:ItemNumber>
+       <ns3:AuctionTransactionId></ns3:AuctionTransactionId>
+       <ns3:OrderId></ns3:OrderId>
+       <ns3:CartID></ns3:CartID>
+      </ns3:EbayItemPaymentDetailsItem>
+      <ns3:PromoCode></ns3:PromoCode>
+      <ns3:ProductCategory>Other</ns3:ProductCategory>
+      <ns3:Description></ns3:Description>
+      <ns3:ItemWeight unit="">0.0</ns3:ItemWeight>
+      <ns3:ItemLength unit="">0.0</ns3:ItemLength>
+      <ns3:ItemWidth unit="">0.0</ns3:ItemWidth>
+      <ns3:ItemHeight unit="">0.0</ns3:ItemHeight>
+      <ns3:ItemURL></ns3:ItemURL>
+      <ns3:EnhancedItemData>
+      </ns3:EnhancedItemData>
+      <ns3:ItemCategory>Physical</ns3:ItemCategory>
+     </ns3:PaymentDetailsItem>
+     <ns3:InsuranceTotal currencyID="AFA"></ns3:InsuranceTotal>
+     <ns3:ShippingDiscount currencyID="AFA"></ns3:ShippingDiscount>
+     <ns3:InsuranceOptionOffered></ns3:InsuranceOptionOffered>
+     <ns3:AllowedPaymentMethod>Default</ns3:AllowedPaymentMethod>
+     <ns3:EnhancedPaymentData>
+      <ns3:AirlineItinerary>
+       <ns3:PassengerName></ns3:PassengerName>
+       <ns3:IssueDate></ns3:IssueDate>
+       <ns3:TravelAgencyName></ns3:TravelAgencyName>
+       <ns3:TravelAgencyCode></ns3:TravelAgencyCode>
+       <ns3:TicketNumber></ns3:TicketNumber>
+       <ns3:IssuingCarrierCode></ns3:IssuingCarrierCode>
+       <ns3:CustomerCode></ns3:CustomerCode>
+       <ns3:TotalFare currencyID="AFA"></ns3:TotalFare>
+       <ns3:TotalTaxes currencyID="AFA"></ns3:TotalTaxes>
+       <ns3:TotalFee currencyID="AFA"></ns3:TotalFee>
+       <ns3:RestrictedTicket></ns3:RestrictedTicket>
+       <ns3:ClearingSequence></ns3:ClearingSequence>
+       <ns3:ClearingCount></ns3:ClearingCount>
+       <ns3:FlightDetails>
+       </ns3:FlightDetails>
+       <ns3:FlightDetails>
+       </ns3:FlightDetails>
+      </ns3:AirlineItinerary>
+     </ns3:EnhancedPaymentData>
+     <ns3:SellerDetails>
+      <ns3:SellerId></ns3:SellerId>
+      <ns3:SellerUserName></ns3:SellerUserName>
+      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:PayPalAccountID></ns3:PayPalAccountID>
+      <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
+     </ns3:SellerDetails>
+     <ns3:NoteText></ns3:NoteText>
+     <ns3:TransactionId></ns3:TransactionId>
+     <ns3:PaymentAction>None</ns3:PaymentAction>
+     <ns3:PaymentRequestID></ns3:PaymentRequestID>
+     <ns3:OrderURL></ns3:OrderURL>
+     <ns3:SoftDescriptor></ns3:SoftDescriptor>
+     <ns3:BranchLevel>0</ns3:BranchLevel>
+     <ns3:OfferDetails>
+      <ns3:OfferCode></ns3:OfferCode>
+      <ns3:BMLOfferInfo>
+       <ns3:OfferTrackingID></ns3:OfferTrackingID>
+      </ns3:BMLOfferInfo>
+     </ns3:OfferDetails>
+     <ns3:Recurring>Y</ns3:Recurring>
+     <ns3:PaymentReason>None</ns3:PaymentReason>
+     <ns3:LocationID></ns3:LocationID>
+     <ns3:RedeemedOffers>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:RedeemedOffers>
+     <ns3:RedeemedOffers>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:RedeemedOffers>
+     <ns3:CummulativePoints>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:CummulativePoints>
+     <ns3:CummulativePoints>
+      <ns3:Name></ns3:Name>
+      <ns3:Description></ns3:Description>
+      <ns3:Amount currencyID="AFA"></ns3:Amount>
+      <ns3:RedeemedOfferType>MERCHANT_COUPON</ns3:RedeemedOfferType>
+      <ns3:RedeemedOfferId></ns3:RedeemedOfferId>
+      <ns3:PointsAccrued>0.0</ns3:PointsAccrued>
+     </ns3:CummulativePoints>
+     <ns3:MerchantData>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+     </ns3:MerchantData>
+     <ns3:MerchantData>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+      <ns3:MerchantDataTuple>
+       <ns3:Key></ns3:Key>
+       <ns3:Value></ns3:Value>
+      </ns3:MerchantDataTuple>
+     </ns3:MerchantData>
+    </ns3:PaymentDetails>
+    <ns3:UserSelectedOptions>
+     <ns3:ShippingCalculationMode></ns3:ShippingCalculationMode>
+     <ns3:InsuranceOptionSelected></ns3:InsuranceOptionSelected>
+     <ns3:ShippingOptionIsDefault></ns3:ShippingOptionIsDefault>
+     <ns3:ShippingOptionAmount currencyID="AFA"></ns3:ShippingOptionAmount>
+     <ns3:ShippingOptionName></ns3:ShippingOptionName>
+     <ns3:ScheduledShippingDate></ns3:ScheduledShippingDate>
+     <ns3:ScheduledShippingPeriod></ns3:ScheduledShippingPeriod>
+    </ns3:UserSelectedOptions>
+    <ns3:IncentiveDetails>
+     <ns3:UniqueIdentifier></ns3:UniqueIdentifier>
+     <ns3:SiteAppliedOn>INCENTIVE-SITE-APPLIED-ON-UNKNOWN</ns3:SiteAppliedOn>
+     <ns3:TotalDiscountAmount currencyID="AFA"></ns3:TotalDiscountAmount>
+     <ns3:Status>INCENTIVE-APPLIED-STATUS-SUCCESS</ns3:Status>
+     <ns3:ErrorCode>0</ns3:ErrorCode>
+     <ns3:IncentiveAppliedDetails>
+      <ns3:PaymentRequestID></ns3:PaymentRequestID>
+      <ns3:ItemId></ns3:ItemId>
+      <ns3:ExternalTxnId></ns3:ExternalTxnId>
+      <ns3:DiscountAmount currencyID="AFA"></ns3:DiscountAmount>
+      <ns3:SubType></ns3:SubType>
+     </ns3:IncentiveAppliedDetails>
+     <ns3:IncentiveAppliedDetails>
+      <ns3:PaymentRequestID></ns3:PaymentRequestID>
+      <ns3:ItemId></ns3:ItemId>
+      <ns3:ExternalTxnId></ns3:ExternalTxnId>
+      <ns3:DiscountAmount currencyID="AFA"></ns3:DiscountAmount>
+      <ns3:SubType></ns3:SubType>
+     </ns3:IncentiveAppliedDetails>
+    </ns3:IncentiveDetails>
+    <ns3:IncentiveDetails>
+     <ns3:UniqueIdentifier></ns3:UniqueIdentifier>
+     <ns3:SiteAppliedOn>INCENTIVE-SITE-APPLIED-ON-UNKNOWN</ns3:SiteAppliedOn>
+     <ns3:TotalDiscountAmount currencyID="AFA"></ns3:TotalDiscountAmount>
+     <ns3:Status>INCENTIVE-APPLIED-STATUS-SUCCESS</ns3:Status>
+     <ns3:ErrorCode>0</ns3:ErrorCode>
+     <ns3:IncentiveAppliedDetails>
+      <ns3:PaymentRequestID></ns3:PaymentRequestID>
+      <ns3:ItemId></ns3:ItemId>
+      <ns3:ExternalTxnId></ns3:ExternalTxnId>
+      <ns3:DiscountAmount currencyID="AFA"></ns3:DiscountAmount>
+      <ns3:SubType></ns3:SubType>
+     </ns3:IncentiveAppliedDetails>
+     <ns3:IncentiveAppliedDetails>
+      <ns3:PaymentRequestID></ns3:PaymentRequestID>
+      <ns3:ItemId></ns3:ItemId>
+      <ns3:ExternalTxnId></ns3:ExternalTxnId>
+      <ns3:DiscountAmount currencyID="AFA"></ns3:DiscountAmount>
+      <ns3:SubType></ns3:SubType>
+     </ns3:IncentiveAppliedDetails>
+    </ns3:IncentiveDetails>
+    <ns3:GiftMessage></ns3:GiftMessage>
+    <ns3:GiftReceiptEnable></ns3:GiftReceiptEnable>
+    <ns3:GiftWrapName></ns3:GiftWrapName>
+    <ns3:GiftWrapAmount currencyID="AFA"></ns3:GiftWrapAmount>
+    <ns3:BuyerMarketingEmail></ns3:BuyerMarketingEmail>
+    <ns3:SurveyQuestion></ns3:SurveyQuestion>
+    <ns3:SurveyChoiceSelected></ns3:SurveyChoiceSelected>
+    <ns3:SurveyChoiceSelected></ns3:SurveyChoiceSelected>
+    <ns3:PaymentRequestInfo>
+     <ns3:TransactionId></ns3:TransactionId>
+     <ns3:PaymentRequestID></ns3:PaymentRequestID>
+     <ns3:PaymentError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:PaymentError>
+    </ns3:PaymentRequestInfo>
+    <ns3:PaymentRequestInfo>
+     <ns3:TransactionId></ns3:TransactionId>
+     <ns3:PaymentRequestID></ns3:PaymentRequestID>
+     <ns3:PaymentError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:PaymentError>
+    </ns3:PaymentRequestInfo>
+    <ns3:ExternalRememberMeStatusDetails>
+     <ns3:ExternalRememberMeStatus>0</ns3:ExternalRememberMeStatus>
+     <ns3:ExternalRememberMeID></ns3:ExternalRememberMeID>
+    </ns3:ExternalRememberMeStatusDetails>
+    <ns3:RefreshTokenStatusDetails>
+     <ns3:RefreshTokenStatus>0</ns3:RefreshTokenStatus>
+     <ns3:RefreshToken></ns3:RefreshToken>
+     <ns3:ImmutableID></ns3:ImmutableID>
+    </ns3:RefreshTokenStatusDetails>
+    <ns3:PaymentInfo>
+     <ns3:TransactionID></ns3:TransactionID>
+     <ns3:EbayTransactionID></ns3:EbayTransactionID>
+     <ns3:ParentTransactionID></ns3:ParentTransactionID>
+     <ns3:ReceiptID></ns3:ReceiptID>
+     <ns3:TransactionType>none</ns3:TransactionType>
+     <ns3:PaymentType>none</ns3:PaymentType>
+     <ns3:RefundSourceCodeType>any</ns3:RefundSourceCodeType>
+     <ns3:ExpectedeCheckClearDate>2017-10-31T23:05:27Z</ns3:ExpectedeCheckClearDate>
+     <ns3:PaymentDate>2017-10-31T23:05:27Z</ns3:PaymentDate>
+     <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
+     <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
+     <ns3:FinancingFeeAmount currencyID="AFA"></ns3:FinancingFeeAmount>
+     <ns3:FinancingTotalCost currencyID="AFA"></ns3:FinancingTotalCost>
+     <ns3:FinancingMonthlyPayment currencyID="AFA"></ns3:FinancingMonthlyPayment>
+     <ns3:FinancingTerm></ns3:FinancingTerm>
+     <ns3:IsFinancing></ns3:IsFinancing>
+     <ns3:SettleAmount currencyID="AFA"></ns3:SettleAmount>
+     <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
+     <ns3:ExchangeRate></ns3:ExchangeRate>
+     <ns3:PaymentStatus>None</ns3:PaymentStatus>
+     <ns3:PendingReason>none</ns3:PendingReason>
+     <ns3:ReasonCode>none</ns3:ReasonCode>
+     <ns3:HoldDecision></ns3:HoldDecision>
+     <ns3:ShippingMethod></ns3:ShippingMethod>
+     <ns3:ProtectionEligibility></ns3:ProtectionEligibility>
+     <ns3:ProtectionEligibilityType></ns3:ProtectionEligibilityType>
+     <ns3:ReceiptReferenceNumber></ns3:ReceiptReferenceNumber>
+     <ns3:POSTransactionType>F</ns3:POSTransactionType>
+     <ns3:ShipAmount></ns3:ShipAmount>
+     <ns3:ShipHandleAmount></ns3:ShipHandleAmount>
+     <ns3:ShipDiscount></ns3:ShipDiscount>
+     <ns3:InsuranceAmount></ns3:InsuranceAmount>
+     <ns3:Subject></ns3:Subject>
+     <ns3:StoreID></ns3:StoreID>
+     <ns3:TerminalID></ns3:TerminalID>
+     <ns3:SellerDetails>
+      <ns3:SellerId></ns3:SellerId>
+      <ns3:SellerUserName></ns3:SellerUserName>
+      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:PayPalAccountID></ns3:PayPalAccountID>
+      <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
+     </ns3:SellerDetails>
+     <ns3:PaymentRequestID></ns3:PaymentRequestID>
+     <ns3:FMFDetails>
+      <ns3:AcceptFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:AcceptFilters>
+      <ns3:PendingFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:PendingFilters>
+      <ns3:DenyFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:DenyFilters>
+      <ns3:ReportFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:ReportFilters>
+     </ns3:FMFDetails>
+     <ns3:EnhancedPaymentInfo>
+     </ns3:EnhancedPaymentInfo>
+     <ns3:PaymentError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:PaymentError>
+     <ns3:InstrumentDetails>
+      <ns3:InstrumentCategory></ns3:InstrumentCategory>
+      <ns3:InstrumentID></ns3:InstrumentID>
+     </ns3:InstrumentDetails>
+     <ns3:OfferDetails>
+      <ns3:OfferCode></ns3:OfferCode>
+      <ns3:BMLOfferInfo>
+       <ns3:OfferTrackingID></ns3:OfferTrackingID>
+      </ns3:BMLOfferInfo>
+     </ns3:OfferDetails>
+     <ns3:BinEligibility></ns3:BinEligibility>
+     <ns3:SoftDescriptor></ns3:SoftDescriptor>
+     <ns3:SoftDescriptorCity></ns3:SoftDescriptorCity>
+    </ns3:PaymentInfo>
+    <ns3:PaymentInfo>
+     <ns3:TransactionID></ns3:TransactionID>
+     <ns3:EbayTransactionID></ns3:EbayTransactionID>
+     <ns3:ParentTransactionID></ns3:ParentTransactionID>
+     <ns3:ReceiptID></ns3:ReceiptID>
+     <ns3:TransactionType>none</ns3:TransactionType>
+     <ns3:PaymentType>none</ns3:PaymentType>
+     <ns3:RefundSourceCodeType>any</ns3:RefundSourceCodeType>
+     <ns3:ExpectedeCheckClearDate>2017-10-31T23:05:27Z</ns3:ExpectedeCheckClearDate>
+     <ns3:PaymentDate>2017-10-31T23:05:27Z</ns3:PaymentDate>
+     <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
+     <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
+     <ns3:FinancingFeeAmount currencyID="AFA"></ns3:FinancingFeeAmount>
+     <ns3:FinancingTotalCost currencyID="AFA"></ns3:FinancingTotalCost>
+     <ns3:FinancingMonthlyPayment currencyID="AFA"></ns3:FinancingMonthlyPayment>
+     <ns3:FinancingTerm></ns3:FinancingTerm>
+     <ns3:IsFinancing></ns3:IsFinancing>
+     <ns3:SettleAmount currencyID="AFA"></ns3:SettleAmount>
+     <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
+     <ns3:ExchangeRate></ns3:ExchangeRate>
+     <ns3:PaymentStatus>None</ns3:PaymentStatus>
+     <ns3:PendingReason>none</ns3:PendingReason>
+     <ns3:ReasonCode>none</ns3:ReasonCode>
+     <ns3:HoldDecision></ns3:HoldDecision>
+     <ns3:ShippingMethod></ns3:ShippingMethod>
+     <ns3:ProtectionEligibility></ns3:ProtectionEligibility>
+     <ns3:ProtectionEligibilityType></ns3:ProtectionEligibilityType>
+     <ns3:ReceiptReferenceNumber></ns3:ReceiptReferenceNumber>
+     <ns3:POSTransactionType>F</ns3:POSTransactionType>
+     <ns3:ShipAmount></ns3:ShipAmount>
+     <ns3:ShipHandleAmount></ns3:ShipHandleAmount>
+     <ns3:ShipDiscount></ns3:ShipDiscount>
+     <ns3:InsuranceAmount></ns3:InsuranceAmount>
+     <ns3:Subject></ns3:Subject>
+     <ns3:StoreID></ns3:StoreID>
+     <ns3:TerminalID></ns3:TerminalID>
+     <ns3:SellerDetails>
+      <ns3:SellerId></ns3:SellerId>
+      <ns3:SellerUserName></ns3:SellerUserName>
+      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:PayPalAccountID></ns3:PayPalAccountID>
+      <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
+     </ns3:SellerDetails>
+     <ns3:PaymentRequestID></ns3:PaymentRequestID>
+     <ns3:FMFDetails>
+      <ns3:AcceptFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:AcceptFilters>
+      <ns3:PendingFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:PendingFilters>
+      <ns3:DenyFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:DenyFilters>
+      <ns3:ReportFilters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+       <ns3:Filters>
+        <ns3:Id>0</ns3:Id>
+        <ns3:Name></ns3:Name>
+        <ns3:Description></ns3:Description>
+       </ns3:Filters>
+      </ns3:ReportFilters>
+     </ns3:FMFDetails>
+     <ns3:EnhancedPaymentInfo>
+     </ns3:EnhancedPaymentInfo>
+     <ns3:PaymentError>
+      <ns3:ShortMessage></ns3:ShortMessage>
+      <ns3:LongMessage></ns3:LongMessage>
+      <ns3:ErrorCode></ns3:ErrorCode>
+      <ns3:SeverityCode>Warning</ns3:SeverityCode>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+      <ns3:ErrorParameters ParamID="">
+       <ns3:Value></ns3:Value>
+      </ns3:ErrorParameters>
+     </ns3:PaymentError>
+     <ns3:InstrumentDetails>
+      <ns3:InstrumentCategory></ns3:InstrumentCategory>
+      <ns3:InstrumentID></ns3:InstrumentID>
+     </ns3:InstrumentDetails>
+     <ns3:OfferDetails>
+      <ns3:OfferCode></ns3:OfferCode>
+      <ns3:BMLOfferInfo>
+       <ns3:OfferTrackingID></ns3:OfferTrackingID>
+      </ns3:BMLOfferInfo>
+     </ns3:OfferDetails>
+     <ns3:BinEligibility></ns3:BinEligibility>
+     <ns3:SoftDescriptor></ns3:SoftDescriptor>
+     <ns3:SoftDescriptorCity></ns3:SoftDescriptorCity>
+    </ns3:PaymentInfo>
+    <ns3:CartChangeTolerance></ns3:CartChangeTolerance>
+    <ns3:InstrumentDetails>
+     <ns3:InstrumentCategory></ns3:InstrumentCategory>
+     <ns3:InstrumentID></ns3:InstrumentID>
+    </ns3:InstrumentDetails>
+   </ns3:GetExpressCheckoutDetailsResponseDetails>
+  </ns1:GetExpressCheckoutDetailsResponse>
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

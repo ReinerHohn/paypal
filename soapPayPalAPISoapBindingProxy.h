@@ -15,8 +15,11 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
 #define soapPayPalAPISoapBindingProxy_H
 #include "soapH.h"
 
-    class SOAP_CMAC PayPalAPISoapBindingProxy : public soap {
+    class SOAP_CMAC PayPalAPISoapBindingProxy {
       public:
+        /// Context to manage proxy IO and data
+        struct soap *soap;
+        bool soap_own; ///< flag indicating that this context is owned by this proxy when context is shared
         /// Endpoint URL of service 'PayPalAPISoapBindingProxy' (change as needed)
         const char *soap_endpoint;
         /// Variables globally declared in paypal.h, if any
@@ -24,8 +27,8 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         PayPalAPISoapBindingProxy();
         /// Copy constructor
         PayPalAPISoapBindingProxy(const PayPalAPISoapBindingProxy& rhs);
-        /// Construct proxy given a managing context
-        PayPalAPISoapBindingProxy(const struct soap&);
+        /// Construct proxy given a shared managing context
+        PayPalAPISoapBindingProxy(struct soap*);
         /// Constructor taking an endpoint URL
         PayPalAPISoapBindingProxy(const char *endpoint);
         /// Constructor taking input and output mode flags for the new managing context
@@ -34,7 +37,7 @@ A commercial use license is available from Genivia Inc., contact@genivia.com
         PayPalAPISoapBindingProxy(const char *endpoint, soap_mode iomode);
         /// Constructor taking input and output mode flags for the new managing context
         PayPalAPISoapBindingProxy(soap_mode imode, soap_mode omode);
-        /// Destructor deletes deserialized data and managing context
+        /// Destructor deletes non-shared managing context only (use destroy() to delete deserialized data)
         virtual ~PayPalAPISoapBindingProxy();
         /// Initializer used by constructors
         virtual void PayPalAPISoapBindingProxy_init(soap_mode imode, soap_mode omode);
