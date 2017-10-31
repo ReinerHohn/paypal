@@ -35,7 +35,7 @@
      <ns1:ShippingAmount currencyID="AFA"></ns1:ShippingAmount>
      <ns1:TaxAmount currencyID="AFA"></ns1:TaxAmount>
      <ns1:Memo></ns1:Memo>
-     <ns1:RetryUntil>2017-10-31T23:05:26Z</ns1:RetryUntil>
+     <ns1:RetryUntil>2017-10-31T23:22:27Z</ns1:RetryUntil>
      <ns1:RefundSource>any</ns1:RefundSource>
      <ns1:RefundAdvice>false</ns1:RefundAdvice>
      <ns3:MerchantStoreDetails>

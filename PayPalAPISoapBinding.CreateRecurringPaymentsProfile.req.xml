@@ -47,7 +47,7 @@
        <ns3:SubscriberName></ns3:SubscriberName>
        <ns3:SubscriberShippingAddress>
        </ns3:SubscriberShippingAddress>
-       <ns3:BillingStartDate>2017-10-31T23:05:27Z</ns3:BillingStartDate>
+       <ns3:BillingStartDate>2017-10-31T23:22:28Z</ns3:BillingStartDate>
        <ns3:ProfileReference></ns3:ProfileReference>
       </ns3:RecurringPaymentsProfileDetails>
       <ns3:ScheduleDetails>

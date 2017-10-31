@@ -27,8 +27,8 @@
  <SOAP-ENV:Body>
    <ns1:TransactionSearchReq>
     <ns1:TransactionSearchRequest>
-     <ns1:StartDate>2017-10-31T23:05:27Z</ns1:StartDate>
-     <ns1:EndDate>2017-10-31T23:05:27Z</ns1:EndDate>
+     <ns1:StartDate>2017-10-31T23:22:27Z</ns1:StartDate>
+     <ns1:EndDate>2017-10-31T23:22:27Z</ns1:EndDate>
      <ns1:Payer></ns1:Payer>
      <ns1:Receiver></ns1:Receiver>
      <ns1:ReceiptID></ns1:ReceiptID>

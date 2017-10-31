@@ -73,7 +73,7 @@
        <ns3:ThreeDSecureRequest>
        </ns3:ThreeDSecureRequest>
       </ns3:CreditCard>
-      <ns3:BillingStartDate>2017-10-31T23:05:28Z</ns3:BillingStartDate>
+      <ns3:BillingStartDate>2017-10-31T23:22:28Z</ns3:BillingStartDate>
       <ns3:TrialPeriod>
        <ns3:BillingPeriod>NoBillingPeriodType</ns3:BillingPeriod>
        <ns3:BillingFrequency>0</ns3:BillingFrequency>

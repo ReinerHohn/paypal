@@ -28,8 +28,8 @@
   <ns1:GetBoardingDetailsResponse>
    <ns3:GetBoardingDetailsResponseDetails>
     <ns3:Status>Unknown</ns3:Status>
-    <ns3:StartDate>2017-10-31T23:05:27Z</ns3:StartDate>
-    <ns3:LastUpdated>2017-10-31T23:05:27Z</ns3:LastUpdated>
+    <ns3:StartDate>2017-10-31T23:22:27Z</ns3:StartDate>
+    <ns3:LastUpdated>2017-10-31T23:22:27Z</ns3:LastUpdated>
     <ns3:Reason></ns3:Reason>
     <ns3:ProgramName></ns3:ProgramName>
     <ns3:ProgramCode></ns3:ProgramCode>

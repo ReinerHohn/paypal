@@ -53,7 +53,7 @@
        <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
        <ns3:LocationType>Consumer</ns3:LocationType>
        <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
-       <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+       <ns3:ProfileAddressChangeDate>2017-10-31T23:22:27Z</ns3:ProfileAddressChangeDate>
        <ns3:PaymentDetailsItem>
        </ns3:PaymentDetailsItem>
        <ns3:PaymentDetailsItem>
@@ -111,7 +111,7 @@
        <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
        <ns3:LocationType>Consumer</ns3:LocationType>
        <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
-       <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+       <ns3:ProfileAddressChangeDate>2017-10-31T23:22:27Z</ns3:ProfileAddressChangeDate>
        <ns3:PaymentDetailsItem>
        </ns3:PaymentDetailsItem>
        <ns3:PaymentDetailsItem>

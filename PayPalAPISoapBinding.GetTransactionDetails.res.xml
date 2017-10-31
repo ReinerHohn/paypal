@@ -91,8 +91,8 @@
      <ns3:TransactionType>none</ns3:TransactionType>
      <ns3:PaymentType>none</ns3:PaymentType>
      <ns3:RefundSourceCodeType>any</ns3:RefundSourceCodeType>
-     <ns3:ExpectedeCheckClearDate>2017-10-31T23:05:26Z</ns3:ExpectedeCheckClearDate>
-     <ns3:PaymentDate>2017-10-31T23:05:26Z</ns3:PaymentDate>
+     <ns3:ExpectedeCheckClearDate>2017-10-31T23:22:27Z</ns3:ExpectedeCheckClearDate>
+     <ns3:PaymentDate>2017-10-31T23:22:27Z</ns3:PaymentDate>
      <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
      <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
      <ns3:FinancingFeeAmount currencyID="AFA"></ns3:FinancingFeeAmount>
@@ -122,7 +122,7 @@
      <ns3:SellerDetails>
       <ns3:SellerId></ns3:SellerId>
       <ns3:SellerUserName></ns3:SellerUserName>
-      <ns3:SellerRegistrationDate>2017-10-31T23:05:26Z</ns3:SellerRegistrationDate>
+      <ns3:SellerRegistrationDate>2017-10-31T23:22:27Z</ns3:SellerRegistrationDate>
       <ns3:PayPalAccountID></ns3:PayPalAccountID>
       <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
      </ns3:SellerDetails>
@@ -304,9 +304,9 @@
      </ns3:PaymentItem>
      <ns3:Subscription reattempt="" recurring="">
       <ns3:SubscriptionID></ns3:SubscriptionID>
-      <ns3:SubscriptionDate>2017-10-31T23:05:26Z</ns3:SubscriptionDate>
-      <ns3:EffectiveDate>2017-10-31T23:05:26Z</ns3:EffectiveDate>
-      <ns3:RetryTime>2017-10-31T23:05:26Z</ns3:RetryTime>
+      <ns3:SubscriptionDate>2017-10-31T23:22:27Z</ns3:SubscriptionDate>
+      <ns3:EffectiveDate>2017-10-31T23:22:27Z</ns3:EffectiveDate>
+      <ns3:RetryTime>2017-10-31T23:22:27Z</ns3:RetryTime>
       <ns3:Username></ns3:Username>
       <ns3:Password></ns3:Password>
       <ns3:Recurrences></ns3:Recurrences>
@@ -319,7 +319,7 @@
      </ns3:Subscription>
      <ns3:Auction multiItem="">
       <ns3:BuyerID></ns3:BuyerID>
-      <ns3:ClosingDate>2017-10-31T23:05:26Z</ns3:ClosingDate>
+      <ns3:ClosingDate>2017-10-31T23:22:27Z</ns3:ClosingDate>
      </ns3:Auction>
     </ns3:PaymentItemInfo>
     <ns3:OfferCouponInfo>

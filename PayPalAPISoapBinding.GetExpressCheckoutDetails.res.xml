@@ -159,7 +159,7 @@
      <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
      <ns3:LocationType>Consumer</ns3:LocationType>
      <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
-     <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+     <ns3:ProfileAddressChangeDate>2017-10-31T23:22:27Z</ns3:ProfileAddressChangeDate>
      <ns3:PaymentDetailsItem>
       <ns3:Name></ns3:Name>
       <ns3:Number></ns3:Number>
@@ -236,7 +236,7 @@
      <ns3:SellerDetails>
       <ns3:SellerId></ns3:SellerId>
       <ns3:SellerUserName></ns3:SellerUserName>
-      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:SellerRegistrationDate>2017-10-31T23:22:27Z</ns3:SellerRegistrationDate>
       <ns3:PayPalAccountID></ns3:PayPalAccountID>
       <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
      </ns3:SellerDetails>
@@ -363,7 +363,7 @@
      <ns3:PaymentCategoryType>InternationalShipping</ns3:PaymentCategoryType>
      <ns3:LocationType>Consumer</ns3:LocationType>
      <ns3:ShippingMethod>UPSGround</ns3:ShippingMethod>
-     <ns3:ProfileAddressChangeDate>2017-10-31T23:05:27Z</ns3:ProfileAddressChangeDate>
+     <ns3:ProfileAddressChangeDate>2017-10-31T23:22:27Z</ns3:ProfileAddressChangeDate>
      <ns3:PaymentDetailsItem>
       <ns3:Name></ns3:Name>
       <ns3:Number></ns3:Number>
@@ -440,7 +440,7 @@
      <ns3:SellerDetails>
       <ns3:SellerId></ns3:SellerId>
       <ns3:SellerUserName></ns3:SellerUserName>
-      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:SellerRegistrationDate>2017-10-31T23:22:27Z</ns3:SellerRegistrationDate>
       <ns3:PayPalAccountID></ns3:PayPalAccountID>
       <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
      </ns3:SellerDetails>
@@ -621,8 +621,8 @@
      <ns3:TransactionType>none</ns3:TransactionType>
      <ns3:PaymentType>none</ns3:PaymentType>
      <ns3:RefundSourceCodeType>any</ns3:RefundSourceCodeType>
-     <ns3:ExpectedeCheckClearDate>2017-10-31T23:05:27Z</ns3:ExpectedeCheckClearDate>
-     <ns3:PaymentDate>2017-10-31T23:05:27Z</ns3:PaymentDate>
+     <ns3:ExpectedeCheckClearDate>2017-10-31T23:22:27Z</ns3:ExpectedeCheckClearDate>
+     <ns3:PaymentDate>2017-10-31T23:22:27Z</ns3:PaymentDate>
      <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
      <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
      <ns3:FinancingFeeAmount currencyID="AFA"></ns3:FinancingFeeAmount>
@@ -652,7 +652,7 @@
      <ns3:SellerDetails>
       <ns3:SellerId></ns3:SellerId>
       <ns3:SellerUserName></ns3:SellerUserName>
-      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:SellerRegistrationDate>2017-10-31T23:22:27Z</ns3:SellerRegistrationDate>
       <ns3:PayPalAccountID></ns3:PayPalAccountID>
       <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
      </ns3:SellerDetails>
@@ -743,8 +743,8 @@
      <ns3:TransactionType>none</ns3:TransactionType>
      <ns3:PaymentType>none</ns3:PaymentType>
      <ns3:RefundSourceCodeType>any</ns3:RefundSourceCodeType>
-     <ns3:ExpectedeCheckClearDate>2017-10-31T23:05:27Z</ns3:ExpectedeCheckClearDate>
-     <ns3:PaymentDate>2017-10-31T23:05:27Z</ns3:PaymentDate>
+     <ns3:ExpectedeCheckClearDate>2017-10-31T23:22:27Z</ns3:ExpectedeCheckClearDate>
+     <ns3:PaymentDate>2017-10-31T23:22:27Z</ns3:PaymentDate>
      <ns3:GrossAmount currencyID="AFA"></ns3:GrossAmount>
      <ns3:FeeAmount currencyID="AFA"></ns3:FeeAmount>
      <ns3:FinancingFeeAmount currencyID="AFA"></ns3:FinancingFeeAmount>
@@ -774,7 +774,7 @@
      <ns3:SellerDetails>
       <ns3:SellerId></ns3:SellerId>
       <ns3:SellerUserName></ns3:SellerUserName>
-      <ns3:SellerRegistrationDate>2017-10-31T23:05:27Z</ns3:SellerRegistrationDate>
+      <ns3:SellerRegistrationDate>2017-10-31T23:22:27Z</ns3:SellerRegistrationDate>
       <ns3:PayPalAccountID></ns3:PayPalAccountID>
       <ns3:SecureMerchantAccountID></ns3:SecureMerchantAccountID>
      </ns3:SellerDetails>

@@ -27,7 +27,7 @@
  <SOAP-ENV:Body>
   <ns1:GetBalanceResponse>
    <ns1:Balance currencyID="AFA"></ns1:Balance>
-   <ns1:BalanceTimeStamp>2017-10-31T23:05:27Z</ns1:BalanceTimeStamp>
+   <ns1:BalanceTimeStamp>2017-10-31T23:22:27Z</ns1:BalanceTimeStamp>
    <ns1:BalanceHoldings currencyID="AFA"></ns1:BalanceHoldings>
    <ns1:BalanceHoldings currencyID="AFA"></ns1:BalanceHoldings>
   </ns1:GetBalanceResponse>

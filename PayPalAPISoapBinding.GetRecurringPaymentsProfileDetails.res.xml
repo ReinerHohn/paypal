@@ -53,7 +53,7 @@
       <ns3:AddressStatus>None</ns3:AddressStatus>
       <ns3:AddressNormalizationStatus>None</ns3:AddressNormalizationStatus>
      </ns3:SubscriberShippingAddress>
-     <ns3:BillingStartDate>2017-10-31T23:05:27Z</ns3:BillingStartDate>
+     <ns3:BillingStartDate>2017-10-31T23:22:28Z</ns3:BillingStartDate>
      <ns3:ProfileReference></ns3:ProfileReference>
     </ns3:RecurringPaymentsProfileDetails>
     <ns3:CurrentRecurringPaymentsPeriod>
@@ -65,12 +65,12 @@
      <ns3:TaxAmount currencyID="AFA"></ns3:TaxAmount>
     </ns3:CurrentRecurringPaymentsPeriod>
     <ns3:RecurringPaymentsSummary>
-     <ns3:NextBillingDate>2017-10-31T23:05:27Z</ns3:NextBillingDate>
+     <ns3:NextBillingDate>2017-10-31T23:22:28Z</ns3:NextBillingDate>
      <ns3:NumberCyclesCompleted>0</ns3:NumberCyclesCompleted>
      <ns3:NumberCyclesRemaining>0</ns3:NumberCyclesRemaining>
      <ns3:OutstandingBalance currencyID="AFA"></ns3:OutstandingBalance>
      <ns3:FailedPaymentCount>0</ns3:FailedPaymentCount>
-     <ns3:LastPaymentDate>2017-10-31T23:05:27Z</ns3:LastPaymentDate>
+     <ns3:LastPaymentDate>2017-10-31T23:22:28Z</ns3:LastPaymentDate>
      <ns3:LastPaymentAmount currencyID="AFA"></ns3:LastPaymentAmount>
     </ns3:RecurringPaymentsSummary>
     <ns3:CreditCard>
@@ -160,7 +160,7 @@
     <ns3:RegularAmountPaid currencyID="AFA"></ns3:RegularAmountPaid>
     <ns3:AggregateAmount currencyID="AFA"></ns3:AggregateAmount>
     <ns3:AggregateOptionalAmount currencyID="AFA"></ns3:AggregateOptionalAmount>
-    <ns3:FinalPaymentDueDate>2017-10-31T23:05:27Z</ns3:FinalPaymentDueDate>
+    <ns3:FinalPaymentDueDate>2017-10-31T23:22:28Z</ns3:FinalPaymentDueDate>
     <ns3:SoftDescriptor></ns3:SoftDescriptor>
     <ns3:SoftDescriptorCity></ns3:SoftDescriptorCity>
    </ns3:GetRecurringPaymentsProfileDetailsResponseDetails>

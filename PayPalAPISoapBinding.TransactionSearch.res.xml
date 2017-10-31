@@ -27,7 +27,7 @@
  <SOAP-ENV:Body>
   <ns1:TransactionSearchResponse>
    <ns3:PaymentTransactions>
-    <ns3:Timestamp>2017-10-31T23:05:27Z</ns3:Timestamp>
+    <ns3:Timestamp>2017-10-31T23:22:27Z</ns3:Timestamp>
     <ns3:Timezone></ns3:Timezone>
     <ns3:Type></ns3:Type>
     <ns3:Payer></ns3:Payer>
@@ -39,7 +39,7 @@
     <ns3:NetAmount currencyID="AFA"></ns3:NetAmount>
    </ns3:PaymentTransactions>
    <ns3:PaymentTransactions>
-    <ns3:Timestamp>2017-10-31T23:05:27Z</ns3:Timestamp>
+    <ns3:Timestamp>2017-10-31T23:22:27Z</ns3:Timestamp>
     <ns3:Timezone></ns3:Timezone>
     <ns3:Type></ns3:Type>
     <ns3:Payer></ns3:Payer>
