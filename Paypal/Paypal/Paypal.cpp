@@ -4,6 +4,11 @@
 #include <soapH.h>
 #include "soapPayPalAPISoapBindingProxy.h"
 #include "PayPalAPISoapBinding.nsmap"
+#include "D:\Entwicklung\2_git\gsoap\gsoap_2.8.55\gsoap-2.8\gsoap\plugin\cacerts.h"
+
+#include <string>
+#include <fstream>
+#include <streambuf>
 
 #include <iostream>
 #include <sstream>
@@ -36,13 +41,35 @@ int main(int argc, char* argv[])
 	ns1__GetBalanceReq.GetBalanceRequest = new ns1__GetBalanceRequestType; // (soap, NULL, NULL, "ns1:GetBalanceRequestType");
 	ns1__GetBalanceReq.GetBalanceRequest->DetailLevel.push_back(ns3__DetailLevelCodeType__ReturnAll);
 
-	soap_ssl_init();
-	if (soap_ssl_client_context(soap, SOAP_SSL_DEFAULT, NULL, NULL, "api-3t.sandbox.paypal.com_SHA-2_01142018.pem", NULL, NULL))
-	//if (soap_ssl_client_context(soap, SOAP_SSL_DEFAULT, NULL, NULL, "D:\\Entwicklung\\2_git\\paypal\\api-3t.sandbox.paypal.com_SHA-2_01142018.pem", NULL, NULL))
+/*	soap_ssl_init();
+	//if (soap_ssl_client_context(soap, SOAP_SSL_DEFAULT, NULL, NULL, "api-3t.sandbox.paypal.com_SHA-2_01142018.pem", NULL, NULL))
+	if (soap_ssl_client_context(soap, SOAP_SSL_DEFAULT, NULL, NULL, "D:\\Entwicklung\\2_git\\paypal\\api-3t.sandbox.paypal.com_SHA-2_01142018.pem", NULL, NULL))
 	{
 		soap_print_fault(soap, stderr);
 		exit(1);
 	}
+	STACK_OF(X509_NAME) *cert_names;
+	cert_names = SSL_load_client_CA_file("D:\\Entwicklung\\2_git\\paypal_lin\\cacert.pem");
+	if (cert_names != NULL)
+	{
+		//SSL_CTX_set_client_CA_list(soap->ctx, cert_names);
+		//SSL_CTX_add_client_CA(soap->ctx, cert_names);
+		SSL_CTX_use_certificate_chain_file(soap->ctx, "D:\\Entwicklung\\2_git\\paypal_lin\\cacert.pem");
+	}
+*/
+	//std::ifstream t("D:\\Entwicklung\\2_git\\paypal_lin\\gsoap.pem");
+	//std::ifstream t("D:\\Entwicklung\\2_git\\paypal_lin\\cacert.pem");
+	std::ifstream t("D:\\Entwicklung\\2_git\\gsoap\\gsoap_2.8.55\\gsoap-2.8\\gsoap\\samples\\ssl\\cacerts.pem");
+	std::string str((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
+
+	char* pstr = _strdup(str.c_str());
+	//if (soap_ssl_client_cacerts_str(soap, pstr)) // || soap_call_ns__myMethod(soap, "https://api-3t.sandbox.paypal.com") != SOAP_OK)
+	if (soap_ssl_client_cacerts_str(soap, pstr)) // || paypalProxy.GetBalance(&ns1__GetBalanceReq, ns1__GetBalanceResponse) != SOAP_OK)
+	{
+		soap_print_fault(soap, stderr);
+		exit(1);
+	}
+
 	int res = paypalProxy.GetBalance(&ns1__GetBalanceReq, ns1__GetBalanceResponse);
 	if (res != SOAP_OK)
 	{

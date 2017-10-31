@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>D:\Entwicklung\Tools\OpenSSL-Win32\include;D:\Entwicklung\Tools\gsoap-2.8\gsoap;$(ProjectDir)\..\..;$(IncludePath)</IncludePath>
+    <IncludePath>D:\Entwicklung\Tools\OpenSSL\include;D:\Entwicklung\Tools\gsoap-2.8\gsoap;$(ProjectDir)\..\..;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -57,8 +57,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>libgsoap++.a;libcrypto.lib;openssl.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Entwicklung\Tools\OpenSSL-Win32\lib;D:\Entwicklung\Tools\gsoap-2.8\gsoap;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libgsoap++.a;libcrypto.lib;libssl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Entwicklung\Tools\OpenSSL\lib;D:\Entwicklung\Tools\gsoap-2.8\gsoap;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ProjectReference>
       <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
@@ -91,6 +91,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Tools\gsoap-2.8\gsoap\custom\chrono_duration.cpp" />
     <ClCompile Include="..\..\..\..\Tools\gsoap-2.8\gsoap\stdsoap2.cpp" />
+    <ClCompile Include="..\..\..\gsoap\gsoap_2.8.55\gsoap-2.8\gsoap\plugin\cacerts.c" />
     <ClCompile Include="..\..\soapC.cpp" />
     <ClCompile Include="..\..\soapClient.cpp" />
     <ClCompile Include="..\..\soapPayPalAPISoapBindingProxy.cpp" />

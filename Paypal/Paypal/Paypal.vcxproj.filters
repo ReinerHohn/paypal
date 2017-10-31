@@ -47,5 +47,8 @@
     <ClCompile Include="..\..\soapPayPalAPISoapBindingProxy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\gsoap\gsoap_2.8.55\gsoap-2.8\gsoap\plugin\cacerts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
